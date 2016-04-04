@@ -27,7 +27,6 @@ namespace PreFirewall {
 
     AnomaliesResolverWrapper::AnomaliesResolverWrapper() {
         anomaliesResolver = new AnomaliesResolver();
-        int a;
     }
 
     AnomaliesResolverWrapper::~AnomaliesResolverWrapper() {
