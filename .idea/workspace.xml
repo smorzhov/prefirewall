@@ -52,27 +52,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6aa622f-ee61-498b-b9a9-6da1cdd03199" name="Default" comment="crlf to lf">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aclRule.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/firewallRule.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/preFirewall.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest.cbproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest.cbproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest.groupproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest.groupproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_all.cc" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_all.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_link.cc" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_link.cc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_main.cbproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_main.cbproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_unittest.cbproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/codegear/gtest_unittest.cbproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest-md.sln" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest-md.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest-md.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest-md.vcproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest.sln" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest.sln" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest.vcproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_main-md.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_main-md.vcproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_main.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_main.vcproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_prod_test-md.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_prod_test-md.vcproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_prod_test.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_prod_test.vcproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_unittest-md.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_unittest-md.vcproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_unittest.vcproj" afterPath="$PROJECT_DIR$/PreFirewallTests/lib/googletest/msvc/gtest_unittest.vcproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PreFirewall.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,7 +76,7 @@
       <file leaf-file-name="Rule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="600">
               <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="46" selection-end-column="46" />
               <folding />
             </state>
@@ -153,7 +133,7 @@
             <state relative-caret-position="75">
               <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <marker date="1460724797124" expanded="false" signature="0:43" placeholder="/** Created by smorzhov on 08.04.16. ...*/" />
+                <element signature="e#0#43#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -165,7 +145,7 @@
             <state relative-caret-position="135">
               <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
               <folding>
-                <marker date="1460726450657" expanded="false" signature="0:43" placeholder="/** Created by smorzhov on 08.04.16. ...*/" />
+                <element signature="e#0#43#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -870,7 +850,7 @@
     <frame x="59" y="24" width="1307" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2834891" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2834891" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.4876494" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49402392" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.52803737" order="7" side_tool="true" content_ui="tabs" />
@@ -1194,7 +1174,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="600">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="46" selection-end-column="46" />
           <folding />
         </state>
@@ -1226,9 +1206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,7 +1247,7 @@
         <state relative-caret-position="135">
           <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
           <folding>
-            <marker date="1460726450657" expanded="false" signature="0:43" placeholder="/** Created by smorzhov on 08.04.16. ...*/" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1280,19 +1257,12 @@
         <state relative-caret-position="75">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <marker date="1460724797124" expanded="false" signature="0:43" placeholder="/** Created by smorzhov on 08.04.16. ...*/" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.js" />
     <entry file="file://$PROJECT_DIR$/tests.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
