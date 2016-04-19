@@ -1,15 +1,18 @@
 /**
  * Created by smorzhov on 08.04.16.
  */
-exports.validate = function (rule) {
-    return 
+exports.isValid = function (rule) {
+    return isProtocolValid(rule['nw-proto']) &&
+        isIpValid(rule['src-ip']) && isIpValid(rule['dst-ip']) && isPortValid(rule['tp-dst']) &&
+        isActionValid(rule['action']);
 };
 
 function isProtocolValid(proto) {
     if (proto == null) return true;
-    return proto.toLowerCase() == 'tcp' || proto == 0 ||
-        proto == 'udp'.toLowerCase() || proto == 1 ||
-        proto == 'icmp'.toLowerCase() || proto == 17;
+    return proto.toLowerCase() == 'any' || proto == 0 ||
+        proto.toLowerCase() == 'tcp' || proto == 6 ||
+        proto == 'udp'.toLowerCase() || proto == 11 ||
+        proto == 'icmp'.toLowerCase() || proto == 1;
 }
 
 function isIpValid(ip) {
