@@ -1,7 +1,7 @@
 /**
  * Created by smorzhov on 08.04.16.
  */
-var preFirewall = require('./build/Debug/PreFirewall.node')
+var preFirewall = require('./build/Release/PreFirewall.node')
 var anomaliesResolver = preFirewall.createAnomaliesResolver();
 
 exports.findAnomalies = function(rule) {

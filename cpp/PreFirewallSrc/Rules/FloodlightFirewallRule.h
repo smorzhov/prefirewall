@@ -20,6 +20,8 @@ public:
         ANY = 0, TCP = 6, UDP = 1, ICMP = 17
     };
 
+    FloodlightFirewallRule();
+
     /**
      Floodlight firewall rule constructor
      @param switchId

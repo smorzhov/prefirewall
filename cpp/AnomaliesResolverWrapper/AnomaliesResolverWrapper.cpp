@@ -75,7 +75,7 @@ namespace PreFirewall {
         Isolate* isolate = args.GetIsolate();
 
         AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
-        RuleWrapper* rule = node::ObjectWrap::Unwrap<RuleWrapper>(args[0]->ToObject());
+        RuleWrapper* rule = ObjectWrap::Unwrap<RuleWrapper>(args[0]->ToObject());
 
         vector<void *> conflictedRules = anomaliesResolverWrapper->anomaliesResolver->findAnomalies(rule->GetRule());
         Local<Array> results = Array::New(isolate);

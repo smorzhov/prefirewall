@@ -20,12 +20,12 @@ namespace PreFirewall {
 
     v8::Persistent<Function> FloodlightFirewallRuleWrapper::constructor;
 
-    FloodlightFirewallRuleWrapper::FloodlightFirewallRuleWrapper(Isolate *isolate,
-                                                                 const FunctionCallbackInfo<Value> &args) {
-
+    FloodlightFirewallRuleWrapper::FloodlightFirewallRuleWrapper(FloodlightFirewallRule *rule) {
+        this->rule = rule;
     }
 
     FloodlightFirewallRuleWrapper::~FloodlightFirewallRuleWrapper() {
+        delete rule;
     }
 
     void FloodlightFirewallRuleWrapper::Init(Isolate *isolate) {
@@ -33,6 +33,8 @@ namespace PreFirewall {
         Local<FunctionTemplate> tpl = FunctionTemplate::New(isolate, New);
         tpl->SetClassName(String::NewFromUtf8(isolate, "FloodlightFirewallRule"));
         tpl->InstanceTemplate()->SetInternalFieldCount(1);
+
+        NODE_SET_PROTOTYPE_METHOD(tpl, "toString", ToString);
 
         constructor.Reset(isolate, tpl->GetFunction());
     }
@@ -46,7 +48,8 @@ namespace PreFirewall {
                         String::NewFromUtf8(isolate, "Wrong arguments")));
                 return;
             }
-            FloodlightFirewallRuleWrapper *ruleWrapper = new FloodlightFirewallRuleWrapper(isolate, args);
+            FloodlightFirewallRuleWrapper *ruleWrapper =
+                    new FloodlightFirewallRuleWrapper((FloodlightFirewallRule *)UnpackRule(isolate, args));
             ruleWrapper->Wrap(args.This());
             args.GetReturnValue().Set(args.This());
         } else {
@@ -91,7 +94,7 @@ namespace PreFirewall {
         return obj;
     }
 
-    void *FloodlightFirewallRuleWrapper::UnpackRule(Isolate *isolate, const FunctionCallbackInfo<Value> &args) const {
+    void *FloodlightFirewallRuleWrapper::UnpackRule(Isolate *isolate, const FunctionCallbackInfo<Value> &args) {
         Handle<Object> ruleObj = Handle<Object>::Cast(args[0]);
         Handle<Value> switchId = ruleObj->Get(String::NewFromUtf8(isolate, "switchid"));
         Handle<Value> srcInport = ruleObj->Get(String::NewFromUtf8(isolate, "src-inport"));
@@ -123,5 +126,9 @@ namespace PreFirewall {
         return rule;
     }
 
-
+    void FloodlightFirewallRuleWrapper::ToString(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        FloodlightFirewallRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightFirewallRuleWrapper>(args.Holder());
+        args.GetReturnValue().Set(String::NewFromUtf8(isolate, obj->rule->toString().c_str()));
+    }
 }

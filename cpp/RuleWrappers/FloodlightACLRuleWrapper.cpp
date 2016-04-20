@@ -20,11 +20,12 @@ namespace PreFirewall {
 
     v8::Persistent<Function> FloodlightACLRuleWrapper::constructor;
 
-    FloodlightACLRuleWrapper::FloodlightACLRuleWrapper(Isolate *isolate, const FunctionCallbackInfo<Value> &args) {
-        rule = (Rule *)UnpackRule(isolate, args);
+    FloodlightACLRuleWrapper::FloodlightACLRuleWrapper(FloodlightACLRule *rule) {
+        this->rule = rule;
     }
 
     FloodlightACLRuleWrapper::~FloodlightACLRuleWrapper() {
+        delete rule;
     }
 
     void FloodlightACLRuleWrapper::Init(Isolate *isolate) {
@@ -32,6 +33,8 @@ namespace PreFirewall {
         Local<FunctionTemplate> tpl = FunctionTemplate::New(isolate, New);
         tpl->SetClassName(String::NewFromUtf8(isolate, "FloodlightACLRule"));
         tpl->InstanceTemplate()->SetInternalFieldCount(1);
+
+        NODE_SET_PROTOTYPE_METHOD(tpl, "toString", ToString);
 
         constructor.Reset(isolate, tpl->GetFunction());
     }
@@ -45,7 +48,8 @@ namespace PreFirewall {
                         String::NewFromUtf8(isolate, "Wrong arguments")));
                 return;
             }
-            FloodlightACLRuleWrapper *ruleWrapper = new FloodlightACLRuleWrapper(isolate, args);
+            FloodlightACLRuleWrapper *ruleWrapper =
+                    new FloodlightACLRuleWrapper((FloodlightACLRule *)UnpackRule(isolate, args));
             ruleWrapper->Wrap(args.This());
             args.GetReturnValue().Set(args.This());
         } else {
@@ -83,7 +87,7 @@ namespace PreFirewall {
         return obj;
     }
 
-    void *FloodlightACLRuleWrapper::UnpackRule(Isolate *isolate, const FunctionCallbackInfo<Value> &args) const {
+    void *FloodlightACLRuleWrapper::UnpackRule(Isolate *isolate, const FunctionCallbackInfo<Value> &args) {
         Handle<Object> ruleObj = Handle<Object>::Cast(args[0]);
         Handle<Value> nwProto = ruleObj->Get(String::NewFromUtf8(isolate, "nw-proto"));
         Handle<Value> srcIp = ruleObj->Get(String::NewFromUtf8(isolate, "src-ip"));
@@ -99,5 +103,11 @@ namespace PreFirewall {
                 std::string(*(String::Utf8Value(action->ToString())))
         );
         return rule;
+    }
+
+    void FloodlightACLRuleWrapper::ToString(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        FloodlightACLRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightACLRuleWrapper>(args.Holder());
+        args.GetReturnValue().Set(String::NewFromUtf8(isolate, obj->rule->toString().c_str()));
     }
 }

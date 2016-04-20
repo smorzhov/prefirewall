@@ -11,7 +11,7 @@
 
 namespace PreFirewall {
 
-    class FloodlightACLRuleWrapper : public virtual RuleWrapper {
+    class FloodlightACLRuleWrapper : public RuleWrapper {
     public:
         static void Init(v8::Isolate *);
 
@@ -21,14 +21,16 @@ namespace PreFirewall {
 
         virtual v8::Local<v8::Object> PackRule(v8::Isolate *, void *) const override;
 
-        virtual void *UnpackRule(v8::Isolate *isolate, const v8::FunctionCallbackInfo<v8::Value> &args) const override;
+        static void *UnpackRule(v8::Isolate *isolate, const v8::FunctionCallbackInfo<v8::Value> &args);
 
     private:
-        explicit FloodlightACLRuleWrapper(v8::Isolate *, const v8::FunctionCallbackInfo<v8::Value> &);
+        explicit FloodlightACLRuleWrapper(FloodlightACLRule* rule = nullptr);
 
         ~FloodlightACLRuleWrapper();
 
         static void New(const v8::FunctionCallbackInfo<v8::Value> &args);
+
+        static void ToString(const v8::FunctionCallbackInfo<v8::Value>& args);
 
         static v8::Persistent<v8::Function> constructor;
     };

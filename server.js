@@ -34,13 +34,17 @@ function accept(req, res) {
                         return;
                     }
                     var fRule = preFirewall.createFloodlightFirewallRule(rule);
+                    console.log(fRule.toString());
                     var conflicts = preFirewall.findAnomalies(fRule)
                     var rules = preFirewall.getRules();
                     if (conflicts.length == 0) {
                         res.end("The rule has been successfully added!\n");
                         return;
                     }
-                    res.end(conflicts);
+                    res.end("Conflicts detected\n");
+                    for (var i = 0; i < conflicts.length; i++) {
+                        res.end(JSON.stringify(conflicts[i]) + "\n");
+                    }
                 })
             }
             return;
