@@ -6,6 +6,7 @@
 #include "../RuleWrappers/RuleWrapper.h"
 #include "../RuleWrappers/FloodlightACLRuleWrapper.h"
 #include <node/node.h>
+#include <node/v8.h>
 
 namespace PreFirewall {
 
@@ -41,6 +42,7 @@ namespace PreFirewall {
 
         NODE_SET_PROTOTYPE_METHOD(tpl, "findAnomalies", FindAnomalies);
         NODE_SET_PROTOTYPE_METHOD(tpl, "undoChanges", UndoChanges);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "getRules", GetRules);
 
         constructor.Reset(isolate, tpl->GetFunction());
     }
@@ -84,9 +86,25 @@ namespace PreFirewall {
         args.GetReturnValue().Set(results);
     }
 
-    void AnomaliesResolverWrapper::UndoChanges(const v8::FunctionCallbackInfo<v8::Value> &args) {
+    void AnomaliesResolverWrapper::UndoChanges(const FunctionCallbackInfo<Value> &args) {
         AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
         anomaliesResolverWrapper->anomaliesResolver->undoChanges();
+    }
+
+    void AnomaliesResolverWrapper::GetRules(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        /*AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
+        vector<void *> rules = anomaliesResolverWrapper->anomaliesResolver->getNewRules();
+        Local<Array> result = Array::New(isolate);
+        RuleWrapper *rule;
+        for (unsigned int i = 0; i < rules.size(); ++i) {
+            Local<Object> r = rule->PackRule(isolate, rules[i]);
+            result->Set(i, r);
+        }
+        args.GetReturnValue().Set(result);*/
+        Local<Object> obj = Object::New(isolate);
+        obj->Set(String::NewFromUtf8(isolate, "mean"), v8::Number::New(isolate, 10));
+        args.GetReturnValue().Set(obj);
     }
 
 

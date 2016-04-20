@@ -33,7 +33,14 @@ function accept(req, res) {
                         res.end("Incorrect rule!\n");
                         return;
                     }
-                    var conflicts = preFirewall.addRule(rule);
+                    var fRule = preFirewall.createFloodlightFirewallRule(rule);
+                    var conflicts = preFirewall.findAnomalies(fRule)
+                    var rules = preFirewall.getRules();
+                    if (conflicts.length == 0) {
+                        res.end("The rule has been successfully added!\n");
+                        return;
+                    }
+                    res.end(conflicts);
                 })
             }
             return;
@@ -50,13 +57,11 @@ function accept(req, res) {
                     } catch (err) {
                         console.log(err);
                         res.end("Incorrect JSON!\n");
-                        return;
                     }
                     if (!aclRule.isValid(rule)) {
                         res.end("Incorrect rule!\n");
-                        return;
                     }
-                    var conflicts = preFirewall.addRule(rule);
+                    res.end(preFirewall.findAnomalies(rule));
                 })
             }
             return;

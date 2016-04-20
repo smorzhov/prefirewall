@@ -2,7 +2,7 @@
 {
   "target_defaults": {
     "cflags": [],
-    "default_configuration": "Release",
+    "default_configuration": "Debug",
     "defines": [],
     "include_dirs": [],
     "libraries": []
@@ -22,6 +22,7 @@
     "node_byteorder": "little",
     "node_enable_v8_vtunejit": "false",
     "node_install_npm": "true",
+    "node_no_browser_globals": "false",
     "node_prefix": "/usr",
     "node_release_urlbase": "",
     "node_shared_http_parser": "false",
@@ -46,7 +47,7 @@
     "v8_random_seed": 0,
     "v8_use_snapshot": "true",
     "want_separate_host_toolset": 0,
-    "nodedir": "/home/smorzhov/.node-gyp/5.9.1",
+    "nodedir": "/home/smorzhov/.node-gyp/5.10.1",
     "copy_dev_lib": "true",
     "standalone_static_library": 1
   }
