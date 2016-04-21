@@ -7,6 +7,7 @@
 #include <node/node.h>
 #include <node/node_object_wrap.h>
 #include "../PreFirewallSrc/Algorithm/AnomaliesResolver.h"
+#include "../RuleWrappers/RuleWrapper.h"
 
 namespace PreFirewall {
 

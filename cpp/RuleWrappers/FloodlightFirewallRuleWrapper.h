@@ -31,6 +31,10 @@ namespace PreFirewall {
 
         static void ToString(const v8::FunctionCallbackInfo<v8::Value> &args);
 
+        static void GetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args);
+
+        static void SetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args);
+
         static v8::Persistent<v8::Function> constructor;
     };
 }

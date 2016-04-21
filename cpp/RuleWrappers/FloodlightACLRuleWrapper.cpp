@@ -14,6 +14,7 @@ namespace PreFirewall {
     using v8::Object;
     using v8::Persistent;
     using v8::String;
+    using v8::Number;
     using v8::Value;
     using v8::Handle;
     using v8::Exception;
@@ -109,5 +110,20 @@ namespace PreFirewall {
         Isolate* isolate = args.GetIsolate();
         FloodlightACLRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightACLRuleWrapper>(args.Holder());
         args.GetReturnValue().Set(String::NewFromUtf8(isolate, obj->rule->toString().c_str()));
+    }
+
+    void FloodlightACLRuleWrapper::GetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        FloodlightACLRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightACLRuleWrapper>(args.Holder());
+        args.GetReturnValue().Set(Number::New(isolate, obj->rule->getRuleId()));
+    }
+
+    void FloodlightACLRuleWrapper::SetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        FloodlightACLRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightACLRuleWrapper>(args.Holder());
+        int64_t id = args[0]->IsUndefined() ? 0 : args[0]->NumberValue();
+        if (id != 0)
+            obj->rule->setRuleId(id);
+        //todo else...
     }
 }

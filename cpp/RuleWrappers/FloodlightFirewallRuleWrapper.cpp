@@ -14,6 +14,7 @@ namespace PreFirewall {
     using v8::Object;
     using v8::Persistent;
     using v8::String;
+    using v8::Number;
     using v8::Value;
     using v8::Handle;
     using v8::Exception;
@@ -35,6 +36,8 @@ namespace PreFirewall {
         tpl->InstanceTemplate()->SetInternalFieldCount(1);
 
         NODE_SET_PROTOTYPE_METHOD(tpl, "toString", ToString);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "getRuleId", GetRuleId);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "setRuleId", SetRuleId);
 
         constructor.Reset(isolate, tpl->GetFunction());
     }
@@ -130,5 +133,20 @@ namespace PreFirewall {
         Isolate* isolate = args.GetIsolate();
         FloodlightFirewallRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightFirewallRuleWrapper>(args.Holder());
         args.GetReturnValue().Set(String::NewFromUtf8(isolate, obj->rule->toString().c_str()));
+    }
+
+    void FloodlightFirewallRuleWrapper::GetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        FloodlightFirewallRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightFirewallRuleWrapper>(args.Holder());
+        args.GetReturnValue().Set(Number::New(isolate, obj->rule->getRuleId()));
+    }
+
+    void FloodlightFirewallRuleWrapper::SetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        FloodlightFirewallRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightFirewallRuleWrapper>(args.Holder());
+        int64_t id = args[0]->IsUndefined() ? 0 : args[0]->NumberValue();
+        if (id != 0)
+            obj->rule->setRuleId(id);
+        //todo else...
     }
 }
