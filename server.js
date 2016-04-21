@@ -36,15 +36,16 @@ function accept(req, res) {
                     var fRule = preFirewall.createFloodlightFirewallRule(rule);
                     console.log(fRule.toString());
                     var conflicts = preFirewall.findAnomalies(fRule)
-                    var rules = preFirewall.getRules();
+                    //var rules = preFirewall.getRules();
                     if (conflicts.length == 0) {
                         res.end("The rule has been successfully added!\n");
                         return;
                     }
-                    res.end("Conflicts detected\n");
+                    var reply = "Conflicts detected! These rools were not added.s\n";
                     for (var i = 0; i < conflicts.length; i++) {
-                        res.end(JSON.stringify(conflicts[i]) + "\n");
+                        reply += JSON.stringify(conflicts[i]) + "\n";
                     }
+                    res.end(reply);
                 })
             }
             return;

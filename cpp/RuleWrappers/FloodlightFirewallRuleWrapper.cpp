@@ -72,8 +72,8 @@ namespace PreFirewall {
         args.GetReturnValue().Set(instance);
     }
 
-    Local<Object> FloodlightFirewallRuleWrapper::PackRule(Isolate *isolate, void *rule) const {
-        Local<Object> obj = Object::New(isolate);
+    void FloodlightFirewallRuleWrapper::PackRule(Isolate *isolate, Local<Object>& obj, void *rule) const {
+        //Local<Object> obj = Object::New(isolate);
         FloodlightFirewallRule *r = static_cast<FloodlightFirewallRule *>(rule);
         obj->Set(String::NewFromUtf8(isolate, "switchId"), v8::String::NewFromUtf8(isolate, r->getSwitchId().c_str()));
         obj->Set(String::NewFromUtf8(isolate, "srcInport"), v8::Int32::New(isolate, (int) r->getSrcInport()));
@@ -91,7 +91,7 @@ namespace PreFirewall {
         if (r->getAction() == Rule::Action::ALLOW)
             obj->Set(String::NewFromUtf8(isolate, "dstIp"), v8::String::NewFromUtf8(isolate, "allow"));
         else obj->Set(String::NewFromUtf8(isolate, "dstIp"), v8::String::NewFromUtf8(isolate, "deny"));
-        return obj;
+        //return obj;
     }
 
     void *FloodlightFirewallRuleWrapper::UnpackRule(Isolate *isolate, const FunctionCallbackInfo<Value> &args) {

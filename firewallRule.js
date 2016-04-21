@@ -48,7 +48,7 @@ function isProtocolValid(proto) {
 
 function isPriorituValid(priority) {
     if (priority == null) return true;
-    return Number.isInteger(priority) && priority >=0 && priority < 0xffffffff;
+    return Number.isInteger(priority) && priority >=0 && priority < 0xfffffff;
 }
 
 function isActionValid(action) {

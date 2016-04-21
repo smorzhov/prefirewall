@@ -18,7 +18,7 @@ namespace PreFirewall {
 
         virtual void *GetRule() const { return rule; };
 
-        virtual v8::Local<v8::Object> PackRule(v8::Isolate *, void *) const override;
+        virtual void PackRule(v8::Isolate *, v8::Local<v8::Object>&, void *) const override;
 
         static void *UnpackRule(v8::Isolate *isolate, const v8::FunctionCallbackInfo<v8::Value> &args);
 

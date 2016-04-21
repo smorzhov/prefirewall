@@ -245,6 +245,24 @@ TEST_F(FirewallRulesGeneralCase, resolveAnomalies) {
     }
 }
 
+TEST(smallTest, findAnomalies) {
+    //"src-ip": "192.168.0.1/28", "dl-type": 2048, "action": "allow"
+     FloodlightFirewallRule *rule = new FloodlightFirewallRule(
+                (string &&) "00:00:00:00:00:00:00:00", 2,
+                (string &&) "00:00:00:00:00:00", (string &&) "00:00:00:00:00:00",
+                (short) FloodlightFirewallRule::DlType::IPv4,
+                (string &&) "192.168.0.1/28", (string &&) "0.0.0.0/0", (short) FloodlightFirewallRule::NwProto::ANY,
+                0, 0, 0, (string &&) "allow");
+    AnomaliesResolver *resolver = new AnomaliesResolver();
+    vector<void *> conflicts = resolver->findAnomalies(rule);
+    vector<void *> newRules = resolver->getNewRules();
+    conflicts = resolver->findAnomalies(rule);
+    newRules = resolver->getNewRules();
+    conflicts = resolver->findAnomalies(rule);
+    newRules = resolver->getNewRules();
+}
+
+
 TEST(DISABLED_overlapedFirewallRules, resolveAnomalies) {
     vector<void *> oldRules, newRules, result;
     oldRules.push_back(new FloodlightFirewallRule(

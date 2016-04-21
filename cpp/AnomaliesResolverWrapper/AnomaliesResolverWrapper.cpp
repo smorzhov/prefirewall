@@ -78,12 +78,13 @@ namespace PreFirewall {
         RuleWrapper* rule = ObjectWrap::Unwrap<RuleWrapper>(args[0]->ToObject());
 
         vector<void *> conflictedRules = anomaliesResolverWrapper->anomaliesResolver->findAnomalies(rule->GetRule());
-        Local<Array> results = Array::New(isolate);
+        Local<Array> resultList = Array::New(isolate);
         for (unsigned int i = 0; i < conflictedRules.size(); ++i) {
-            Local<Object> r = rule->PackRule(isolate, conflictedRules[i]);
-            results->Set(i, r);
+            Local<Object> r = Object::New(isolate);
+            rule->PackRule(isolate, r, conflictedRules[i]);
+            resultList->Set(i, r);
         }
-        args.GetReturnValue().Set(results);
+        args.GetReturnValue().Set(resultList);
     }
 
     void AnomaliesResolverWrapper::UndoChanges(const FunctionCallbackInfo<Value> &args) {
@@ -93,19 +94,18 @@ namespace PreFirewall {
 
     void AnomaliesResolverWrapper::GetRules(const v8::FunctionCallbackInfo<v8::Value> &args) {
         Isolate* isolate = args.GetIsolate();
-        /*AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
+        AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
         vector<void *> rules = anomaliesResolverWrapper->anomaliesResolver->getNewRules();
-        Local<Array> result = Array::New(isolate);
-        RuleWrapper *rule;
+        Local<Array> resultList = Array::New(isolate);
+        RuleWrapper* rule;
         for (unsigned int i = 0; i < rules.size(); ++i) {
-            Local<Object> r = rule->PackRule(isolate, rules[i]);
-            result->Set(i, r);
+            Local<Object> r = Object::New(isolate);
+            rule->PackRule(isolate, r, rules[i]);
+            resultList->Set(i, r);
         }
-        args.GetReturnValue().Set(result);*/
-        Local<Object> obj = Object::New(isolate);
+        args.GetReturnValue().Set(resultList);
+        /*Local<Object> obj = Object::New(isolate);
         obj->Set(String::NewFromUtf8(isolate, "mean"), v8::Number::New(isolate, 10));
-        args.GetReturnValue().Set(obj);
+        args.GetReturnValue().Set(obj);*/
     }
-
-
 }  // namespace PreFirewall
