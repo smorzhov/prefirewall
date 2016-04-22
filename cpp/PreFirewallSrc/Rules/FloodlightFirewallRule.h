@@ -90,9 +90,9 @@ public:
 
     virtual void setPriority(int32_t priority) { this->priority = priority; }
 
-    virtual int64_t getRuleId() const { return this->ruleId; }
+    virtual int32_t getId() const { return this->id; }
 
-    virtual void setRuleId(const int64_t ruleId) { this->ruleId = ruleId; }
+    virtual void setId(const int32_t id) { this->id = id; }
 
     virtual uint32_t getOwner() const { return this->owner; }
 

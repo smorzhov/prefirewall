@@ -30,6 +30,8 @@ namespace PreFirewall {
 
         static void GetRules(const v8::FunctionCallbackInfo<v8::Value> &args);
 
+        static void RemoveRule(const v8::FunctionCallbackInfo<v8::Value> &args);
+
         static void FindAnomaliesAsync(const v8::FunctionCallbackInfo<v8::Value> &args);
 
         static void UndoChangesAsync(const v8::FunctionCallbackInfo<v8::Value> &args);

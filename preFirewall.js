@@ -29,14 +29,14 @@ exports.createACLRule = function (rule) {
     if (rule['tp-dst'] == undefined) rule[''] = 0;
 };
 
-exports.addFirewallRule = function (rule) {
-    
-}
-
 exports.undoChanges = function() {
     anomaliesResolver.undoChanges();
 };
 
-exports.getRules = function() {
-    return anomaliesResolver.getRules();
+exports.getRules = function(rule) {
+    return anomaliesResolver.getRules(rule);
+};
+
+exports.removeRule = function(id) {
+    return anomaliesResolver.removeRule(id);
 };

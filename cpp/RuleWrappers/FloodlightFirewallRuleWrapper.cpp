@@ -26,7 +26,7 @@ namespace PreFirewall {
     }
 
     FloodlightFirewallRuleWrapper::~FloodlightFirewallRuleWrapper() {
-        delete rule;
+        //delete rule;
     }
 
     void FloodlightFirewallRuleWrapper::Init(Isolate *isolate) {
@@ -36,8 +36,8 @@ namespace PreFirewall {
         tpl->InstanceTemplate()->SetInternalFieldCount(1);
 
         NODE_SET_PROTOTYPE_METHOD(tpl, "toString", ToString);
-        NODE_SET_PROTOTYPE_METHOD(tpl, "getRuleId", GetRuleId);
-        NODE_SET_PROTOTYPE_METHOD(tpl, "setRuleId", SetRuleId);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "getId", GetId);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "setId", SetId);
 
         constructor.Reset(isolate, tpl->GetFunction());
     }
@@ -76,29 +76,29 @@ namespace PreFirewall {
     }
 
     void FloodlightFirewallRuleWrapper::PackRule(Isolate *isolate, Local<Object>& obj, void *rule) const {
-        //Local<Object> obj = Object::New(isolate);
         FloodlightFirewallRule *r = static_cast<FloodlightFirewallRule *>(rule);
-        obj->Set(String::NewFromUtf8(isolate, "switchId"), v8::String::NewFromUtf8(isolate, r->getSwitchId().c_str()));
-        obj->Set(String::NewFromUtf8(isolate, "srcInport"), v8::Int32::New(isolate, (int) r->getSrcInport()));
-        obj->Set(String::NewFromUtf8(isolate, "srcMac"), v8::String::NewFromUtf8(isolate, r->getSrcMac().c_str()));
-        obj->Set(String::NewFromUtf8(isolate, "dstMac"), v8::String::NewFromUtf8(isolate, r->getDstMac().c_str()));
-        obj->Set(String::NewFromUtf8(isolate, "dlType"), v8::Int32::New(isolate, (int) r->getDlType()));
-        obj->Set(String::NewFromUtf8(isolate, "srcIp"),
+        obj->Set(String::NewFromUtf8(isolate, "rule-id"), v8::Int32::New(isolate, r->getId()));
+        obj->Set(String::NewFromUtf8(isolate, "switchid"), v8::String::NewFromUtf8(isolate, r->getSwitchId().c_str()));
+        obj->Set(String::NewFromUtf8(isolate, "src-inport"), v8::Int32::New(isolate, (int) r->getSrcInport()));
+        obj->Set(String::NewFromUtf8(isolate, "src-mac"), v8::String::NewFromUtf8(isolate, r->getSrcMac().c_str()));
+        obj->Set(String::NewFromUtf8(isolate, "dst-mac"), v8::String::NewFromUtf8(isolate, r->getDstMac().c_str()));
+        obj->Set(String::NewFromUtf8(isolate, "dl-type"), v8::Int32::New(isolate, (int) r->getDlType()));
+        obj->Set(String::NewFromUtf8(isolate, "src-ip"),
                  v8::String::NewFromUtf8(isolate, r->getSrcIp().getIp().c_str()));
-        obj->Set(String::NewFromUtf8(isolate, "dstIp"),
+        obj->Set(String::NewFromUtf8(isolate, "dst-ip"),
                  v8::String::NewFromUtf8(isolate, r->getDstIp().getIp().c_str()));
-        obj->Set(String::NewFromUtf8(isolate, "nwProto"), v8::Int32::New(isolate, (int) r->getNwProto()));
-        obj->Set(String::NewFromUtf8(isolate, "tpSrc"), v8::Int32::New(isolate, (int) r->getTpSrc()));
-        obj->Set(String::NewFromUtf8(isolate, "tpDst"), v8::Int32::New(isolate, (int) r->getTpDst()));
+        obj->Set(String::NewFromUtf8(isolate, "nw-proto"), v8::Int32::New(isolate, (int) r->getNwProto()));
+        obj->Set(String::NewFromUtf8(isolate, "tp-src"), v8::Int32::New(isolate, (int) r->getTpSrc()));
+        obj->Set(String::NewFromUtf8(isolate, "tp-dst"), v8::Int32::New(isolate, (int) r->getTpDst()));
         obj->Set(String::NewFromUtf8(isolate, "priority"), v8::Int32::New(isolate, (int) r->getPriority()));
         if (r->getAction() == Rule::Action::ALLOW)
-            obj->Set(String::NewFromUtf8(isolate, "dstIp"), v8::String::NewFromUtf8(isolate, "allow"));
-        else obj->Set(String::NewFromUtf8(isolate, "dstIp"), v8::String::NewFromUtf8(isolate, "deny"));
-        //return obj;
+            obj->Set(String::NewFromUtf8(isolate, "action"), v8::String::NewFromUtf8(isolate, "allow"));
+        else obj->Set(String::NewFromUtf8(isolate, "action"), v8::String::NewFromUtf8(isolate, "deny"));
     }
 
     void *FloodlightFirewallRuleWrapper::UnpackRule(Isolate *isolate, const FunctionCallbackInfo<Value> &args) {
         Handle<Object> ruleObj = Handle<Object>::Cast(args[0]);
+        Handle<Value> id = ruleObj->Get(String::NewFromUtf8(isolate, "rule-id"));
         Handle<Value> switchId = ruleObj->Get(String::NewFromUtf8(isolate, "switchid"));
         Handle<Value> srcInport = ruleObj->Get(String::NewFromUtf8(isolate, "src-inport"));
         Handle<Value> srcMac = ruleObj->Get(String::NewFromUtf8(isolate, "src-mac"));
@@ -126,6 +126,7 @@ namespace PreFirewall {
                 (uint32_t) priority->NumberValue(),
                 std::string(*(String::Utf8Value(action->ToString())))
         );
+        rule->setId(id->NumberValue());
         return rule;
     }
 
@@ -135,18 +136,18 @@ namespace PreFirewall {
         args.GetReturnValue().Set(String::NewFromUtf8(isolate, obj->rule->toString().c_str()));
     }
 
-    void FloodlightFirewallRuleWrapper::GetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+    void FloodlightFirewallRuleWrapper::GetId(const v8::FunctionCallbackInfo<v8::Value> &args) {
         Isolate* isolate = args.GetIsolate();
         FloodlightFirewallRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightFirewallRuleWrapper>(args.Holder());
-        args.GetReturnValue().Set(Number::New(isolate, obj->rule->getRuleId()));
+        args.GetReturnValue().Set(Number::New(isolate, obj->rule->getId()));
     }
 
-    void FloodlightFirewallRuleWrapper::SetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
-        Isolate* isolate = args.GetIsolate();
+    void FloodlightFirewallRuleWrapper::SetId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        //Isolate* isolate = args.GetIsolate();
         FloodlightFirewallRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightFirewallRuleWrapper>(args.Holder());
-        int64_t id = args[0]->IsUndefined() ? 0 : args[0]->NumberValue();
+        int32_t id = args[0]->IsUndefined() ? 0 : args[0]->Int32Value();
         if (id != 0)
-            obj->rule->setRuleId(id);
+            obj->rule->setId(id);
         //todo else...
     }
 }

@@ -12,7 +12,7 @@ var floodlight = require('./floodlight');
 
 var fileServer = new static.Server('.');
 
-function postFirewallRule(req, res) {
+function postRule(req, res, type) {
     req.setEncoding('utf8');
     var str = '';
     req.on('data', function (chunk) {
@@ -26,18 +26,45 @@ function postFirewallRule(req, res) {
             res.end("Incorrect JSON!\n");
             return;
         }
-        if (!firewallRule.isValid(rule)) {
-            res.end("Incorrect rule!\n");
-            return;
+        switch (type) {
+            case 'firewall':
+                if (!firewallRule.isValid(rule)) {
+                    res.end("Incorrect rule!\n");
+                    return;
+                }
+                break;
+            case 'acl':
+                if (!aclRule.isValidrule(rule)) {
+                    res.end("Incorrect rule!\n");
+                    return;
+                }
+                break;
         }
-        var fRule = preFirewall.createFirewallRule(rule);
+        
+        var fRule;
+        switch (type) {
+            case 'firewall':
+                fRule = preFirewall.createFirewallRule(rule);
+                break;
+            case 'acl':
+                fRule = preFirewall.createACLRule(rule);
+                break;
+        }
         console.log(fRule.toString());
+        var rules = preFirewall.getRules(fRule);
         var conflicts = preFirewall.findAnomalies(fRule)
-        //var rules = preFirewall.getRules();
+        var rules = preFirewall.getRules(fRule);
         var reply = "";
         if (conflicts.length == 0) {
-            floodlight.postFirewallRule(res, floodlight.firewallUrl, rule);
-            return;
+            switch (type) {
+                case 'firewall':
+                    floodlight.sendRule(res, floodlight.firewallUrl, preFirewall, fRule);
+                    var rules = preFirewall.getRules(fRule);
+                    return;
+                case 'acl':
+                    floodlight.sendRule(res, floodlight.aclUrl, preFirewall, fRule);
+                    return;
+            }
         }
         reply = "Conflicts detected! These rules were not added.\n";
         for (var i = 0; i < conflicts.length; i++) {
@@ -47,40 +74,28 @@ function postFirewallRule(req, res) {
     })
 }
 
-function postACLRule(req, res) {
+function deleteRule(req, res, type) {
     req.setEncoding('utf8');
     var str = '';
     req.on('data', function (chunk) {
         str += chunk;
     }).on('end', function () {
-        var rule;
+        var id;
         try {
-            rule = JSON.parse(str);
+            id = JSON.parse(str);
         } catch (err) {
             console.log(err);
             res.end("Incorrect JSON!\n");
             return;
         }
-        if (!aclRule.isValid(rule)) {
-            res.end("Incorrect rule!\n");
-            return;
+        switch (type) {
+            case 'firewall':
+                floodlight.removeRule(res, floodlight.firewallUrl, preFirewall, id);
+                return;
+            case 'acl':
+                floodlight.removeRule(res, floodlight.aclUrl, preFirewall, id);
+                return;
         }
-        var aclRule = preFirewall.createACLRule(rule);
-        console.log(aclRule.toString());
-        var conflicts = preFirewall.findAnomalies(aclRule)
-        //var rules = preFirewall.getRules();
-        var reply = "";
-        if (conflicts.length == 0) {
-            reply = "The rule has been added successfully!\n";
-
-            res.end(reply);
-            return;
-        }
-        reply = "Conflicts detected! These rules were not added.\n";
-        for (var i = 0; i < conflicts.length; i++) {
-            reply += JSON.stringify(conflicts[i]) + "\n";
-        }
-        res.end(reply);
     })
 }
 
@@ -89,12 +104,18 @@ function accept(req, res) {
     switch (urlParsed.pathname) {
         case '/firewall/rules/json':
             if (req.method == 'POST') {
-                postFirewallRule(req, res);
+                postRule(req, res, 'firewall');
+            }
+            if (req.method == 'DELETE') {
+                deleteRule(req, res, 'firewall');
             }
             return;
         case '/acl/rules/json':
             if (req.method == 'POST') {
-                postACLRule(req, res);
+                postRule(req, res, 'acl');
+            }
+            if (req.method == 'DELETE') {
+                deleteRule(req, res, 'acl');
             }
             return;
         default:

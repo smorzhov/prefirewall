@@ -23,6 +23,7 @@ namespace PreFirewall {
     using v8::Handle;
     using v8::External;
     using std::vector;
+    using v8::Exception;
 
     v8::Persistent<Function> AnomaliesResolverWrapper::constructor;
 
@@ -31,7 +32,7 @@ namespace PreFirewall {
     }
 
     AnomaliesResolverWrapper::~AnomaliesResolverWrapper() {
-        delete anomaliesResolver;
+        //delete anomaliesResolver;
     }
 
     void AnomaliesResolverWrapper::Init(Isolate* isolate) {
@@ -43,6 +44,7 @@ namespace PreFirewall {
         NODE_SET_PROTOTYPE_METHOD(tpl, "findAnomalies", FindAnomalies);
         NODE_SET_PROTOTYPE_METHOD(tpl, "undoChanges", UndoChanges);
         NODE_SET_PROTOTYPE_METHOD(tpl, "getRules", GetRules);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "removeRule", RemoveRule);
 
         constructor.Reset(isolate, tpl->GetFunction());
     }
@@ -75,6 +77,11 @@ namespace PreFirewall {
         Isolate* isolate = args.GetIsolate();
 
         AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
+        if (args[0]->IsUndefined()) {
+            isolate->ThrowException(Exception::TypeError(
+                    String::NewFromUtf8(isolate, "Wrong arguments")));
+            return;
+        }
         RuleWrapper* rule = ObjectWrap::Unwrap<RuleWrapper>(args[0]->ToObject());
 
         vector<void *> conflictedRules = anomaliesResolverWrapper->anomaliesResolver->findAnomalies(rule->GetRule());
@@ -95,17 +102,38 @@ namespace PreFirewall {
     void AnomaliesResolverWrapper::GetRules(const v8::FunctionCallbackInfo<v8::Value> &args) {
         Isolate* isolate = args.GetIsolate();
         AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
+        if (args[0]->IsUndefined()) {
+            isolate->ThrowException(Exception::TypeError(
+                    String::NewFromUtf8(isolate, "Wrong arguments")));
+            return;
+        }
+        RuleWrapper* rule = ObjectWrap::Unwrap<RuleWrapper>(args[0]->ToObject());
         vector<void *> rules = anomaliesResolverWrapper->anomaliesResolver->getNewRules();
         Local<Array> resultList = Array::New(isolate);
-        RuleWrapper* rule;
         for (unsigned int i = 0; i < rules.size(); ++i) {
             Local<Object> r = Object::New(isolate);
             rule->PackRule(isolate, r, rules[i]);
             resultList->Set(i, r);
         }
         args.GetReturnValue().Set(resultList);
-        /*Local<Object> obj = Object::New(isolate);
-        obj->Set(String::NewFromUtf8(isolate, "mean"), v8::Number::New(isolate, 10));
-        args.GetReturnValue().Set(obj);*/
+    }
+
+    void AnomaliesResolverWrapper::RemoveRule(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        Isolate* isolate = args.GetIsolate();
+        AnomaliesResolverWrapper *anomaliesResolverWrapper = ObjectWrap::Unwrap<AnomaliesResolverWrapper>(args.Holder());
+        if (args[0]->IsUndefined()) {
+            isolate->ThrowException(Exception::TypeError(
+                    String::NewFromUtf8(isolate, "Wrong arguments")));
+            return;
+        }
+        int id = args[0]->Int32Value();
+        bool res = anomaliesResolverWrapper->anomaliesResolver->remove(id);
+        if (!res) {
+            isolate->ThrowException(Exception::TypeError(
+                    String::NewFromUtf8(isolate, "The rule was not removed!")));
+            return;
+        }
+        args.GetReturnValue().Set(res);
+
     }
 }  // namespace PreFirewall

@@ -26,11 +26,17 @@ public:
 
     void undoChanges();
 
+    bool remove(void *);
+
+    bool remove(int64_t);
+
+    bool saveChanges(char *);
+
+    bool loadRulesFromFile(char *);
+
     virtual ~AnomaliesResolver();
 
 protected:
-    void remove(void *);
-
     void insert(void *);
 
     /**
@@ -45,14 +51,16 @@ private:
     enum class ChangeType {
         ANOMALY = 0, ADDITION, REMOVAL
     };
+
     struct Change {
         ChangeType changeType;
         int index;
         void *rule;
 
         Change(ChangeType changeType, int index, void *rule) : changeType(changeType), index(index),
-                                                                     rule(rule) { }
+                                                               rule(rule) { }
     };
+
     stack<Change *> changes;
     vector<void *> conflictedRules;
 

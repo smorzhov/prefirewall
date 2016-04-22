@@ -1,1 +1,2 @@
 curl -X POST -d '{"src-ip": "192.168.0.1/32", "dl-type": 2048, "action": "allow"}' http://localhost:8090/firewall/rules/json
+curl -X DELETE -d '{"ruleid": }' http://localhost:8090/firewall/rules/json

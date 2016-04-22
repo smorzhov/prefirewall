@@ -26,7 +26,7 @@ namespace PreFirewall {
     }
 
     FloodlightACLRuleWrapper::~FloodlightACLRuleWrapper() {
-        delete rule;
+        //delete rule;
     }
 
     void FloodlightACLRuleWrapper::Init(Isolate *isolate) {
@@ -36,6 +36,8 @@ namespace PreFirewall {
         tpl->InstanceTemplate()->SetInternalFieldCount(1);
 
         NODE_SET_PROTOTYPE_METHOD(tpl, "toString", ToString);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "getId", GetId);
+        NODE_SET_PROTOTYPE_METHOD(tpl, "setId", SetId);
 
         constructor.Reset(isolate, tpl->GetFunction());
     }
@@ -74,22 +76,22 @@ namespace PreFirewall {
     }
 
     void FloodlightACLRuleWrapper::PackRule(Isolate *isolate, Local<Object>& obj, void *rule) const {
-        //Local<Object> obj = Object::New(isolate);
         FloodlightACLRule *r = static_cast<FloodlightACLRule *>(rule);
-        obj->Set(String::NewFromUtf8(isolate, "nwProto"), v8::Int32::New(isolate, (int) r->getNwProto()));
-        obj->Set(String::NewFromUtf8(isolate, "srcIp"),
+        obj->Set(String::NewFromUtf8(isolate, "rule-id"), v8::Int32::New(isolate, r->getId()));
+        obj->Set(String::NewFromUtf8(isolate, "nw-proto"), v8::Int32::New(isolate, (int) r->getNwProto()));
+        obj->Set(String::NewFromUtf8(isolate, "src-ip"),
                  v8::String::NewFromUtf8(isolate, r->getSrcIp().getIp().c_str()));
-        obj->Set(String::NewFromUtf8(isolate, "dstIp"),
+        obj->Set(String::NewFromUtf8(isolate, "dst-ip"),
                  v8::String::NewFromUtf8(isolate, r->getDstIp().getIp().c_str()));
-        obj->Set(String::NewFromUtf8(isolate, "tpDst"), v8::Int32::New(isolate, (int) r->getTpDst()));
+        obj->Set(String::NewFromUtf8(isolate, "tp-dst"), v8::Int32::New(isolate, (int) r->getTpDst()));
         if (r->getAction() == Rule::Action::ALLOW)
-            obj->Set(String::NewFromUtf8(isolate, "dstIp"), v8::String::NewFromUtf8(isolate, "allow"));
-        else obj->Set(String::NewFromUtf8(isolate, "dstIp"), v8::String::NewFromUtf8(isolate, "deny"));
-        //return obj;
+            obj->Set(String::NewFromUtf8(isolate, "action"), v8::String::NewFromUtf8(isolate, "allow"));
+        else obj->Set(String::NewFromUtf8(isolate, "action"), v8::String::NewFromUtf8(isolate, "deny"));
     }
 
     void *FloodlightACLRuleWrapper::UnpackRule(Isolate *isolate, const FunctionCallbackInfo<Value> &args) {
         Handle<Object> ruleObj = Handle<Object>::Cast(args[0]);
+        Handle<Value> id = ruleObj->Get(String::NewFromUtf8(isolate, "rule-id"));
         Handle<Value> nwProto = ruleObj->Get(String::NewFromUtf8(isolate, "nw-proto"));
         Handle<Value> srcIp = ruleObj->Get(String::NewFromUtf8(isolate, "src-ip"));
         Handle<Value> dstIp = ruleObj->Get(String::NewFromUtf8(isolate, "dst-ip"));
@@ -103,6 +105,7 @@ namespace PreFirewall {
                 (short) tpDst->NumberValue(),
                 std::string(*(String::Utf8Value(action->ToString())))
         );
+        rule->setId(id->NumberValue());
         return rule;
     }
 
@@ -112,18 +115,18 @@ namespace PreFirewall {
         args.GetReturnValue().Set(String::NewFromUtf8(isolate, obj->rule->toString().c_str()));
     }
 
-    void FloodlightACLRuleWrapper::GetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+    void FloodlightACLRuleWrapper::GetId(const v8::FunctionCallbackInfo<v8::Value> &args) {
         Isolate* isolate = args.GetIsolate();
         FloodlightACLRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightACLRuleWrapper>(args.Holder());
-        args.GetReturnValue().Set(Number::New(isolate, obj->rule->getRuleId()));
+        args.GetReturnValue().Set(Number::New(isolate, obj->rule->getId()));
     }
 
-    void FloodlightACLRuleWrapper::SetRuleId(const v8::FunctionCallbackInfo<v8::Value> &args) {
-        Isolate* isolate = args.GetIsolate();
+    void FloodlightACLRuleWrapper::SetId(const v8::FunctionCallbackInfo<v8::Value> &args) {
+        //Isolate* isolate = args.GetIsolate();
         FloodlightACLRuleWrapper* obj = ObjectWrap::Unwrap<FloodlightACLRuleWrapper>(args.Holder());
-        int64_t id = args[0]->IsUndefined() ? 0 : args[0]->NumberValue();
+        int32_t id = args[0]->IsUndefined() ? 0 : args[0]->NumberValue();
         if (id != 0)
-            obj->rule->setRuleId(id);
+            obj->rule->setId(id);
         //todo else...
     }
 }

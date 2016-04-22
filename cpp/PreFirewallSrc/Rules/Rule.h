@@ -38,9 +38,9 @@ public:
 
     virtual void setPriority(int32_t) = 0;
 
-    virtual int64_t getRuleId() const = 0;
+    virtual int32_t getId() const = 0;
 
-    virtual void setRuleId(const int64_t) = 0;
+    virtual void setId(const int32_t) = 0;
 
     virtual uint32_t getOwner() const = 0;
 
@@ -60,6 +60,6 @@ protected:
      * lower number indicates higher priority
      */
     int32_t priority;
-    int64_t ruleId;
+    int32_t id;
     uint32_t owner;
 };

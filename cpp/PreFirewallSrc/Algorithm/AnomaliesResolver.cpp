@@ -3,6 +3,7 @@
 //
 
 #include <algorithm>
+#include <fstream>
 #include "AnomaliesResolver.h"
 #include "../Rules/Rule.h"
 
@@ -95,10 +96,23 @@ bool AnomaliesResolver::resolve(void *rule1, void *rule2, int index) {
     return true;
 }
 
-void AnomaliesResolver::remove(void *rule) {
+bool AnomaliesResolver::remove(void *rule) {
     auto i = find(newRules.begin(), newRules.end(), rule);
-    if (i != newRules.end())
+    if (i != newRules.end()) {
         newRules.erase(i);
+        return true;
+    }
+    return false;
+}
+
+bool AnomaliesResolver::remove(int64_t id) {
+    for (unsigned int i = 0; i < newRules.size(); ++i) {
+        if (static_cast<Rule *>(newRules[i])->getId() == id) {
+            newRules.erase(newRules.begin() + i);
+            return true;
+        }
+    }
+    return false;
 }
 
 void AnomaliesResolver::undoChanges() {
@@ -120,6 +134,32 @@ void AnomaliesResolver::undoChanges() {
     }
 }
 
+bool AnomaliesResolver::saveChanges(char *fileName) {
+    ofstream file;
+    file.open(fileName, ios::out | ios::trunc);
+    if (!file.is_open())
+        return false;
+    for (auto r: newRules) {
+        file << static_cast<Rule *>(r)->toString();
+        file << "\n";
+    }
+    file.close();
+    return true;
+}
+
+bool AnomaliesResolver::loadRulesFromFile(char *fileName) {
+    ifstream file;
+    file.open(fileName, ios::in);
+    if (!file.is_open())
+        return false;
+    string line;
+    while (getline(file, line)) {
+        //todo
+    }
+    file.close();
+    return true;
+}
+
 AnomaliesResolver::~AnomaliesResolver() {
     for (unsigned int i = 0; i < conflictedRules.size(); ++i) {
         delete (Rule *)conflictedRules[i];
@@ -136,6 +176,8 @@ AnomaliesResolver::~AnomaliesResolver() {
     oldRules.clear();
     newRules.clear();
 }
+
+
 
 
 

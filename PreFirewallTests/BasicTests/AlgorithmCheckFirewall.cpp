@@ -253,13 +253,12 @@ TEST(smallTest, findAnomalies) {
                 (short) FloodlightFirewallRule::DlType::IPv4,
                 (string &&) "192.168.0.1/28", (string &&) "0.0.0.0/0", (short) FloodlightFirewallRule::NwProto::ANY,
                 0, 0, 0, (string &&) "allow");
+    rule->setId(1);
     AnomaliesResolver *resolver = new AnomaliesResolver();
-    vector<void *> conflicts = resolver->findAnomalies(rule);
-    vector<void *> newRules = resolver->getNewRules();
-    conflicts = resolver->findAnomalies(rule);
-    newRules = resolver->getNewRules();
-    conflicts = resolver->findAnomalies(rule);
-    newRules = resolver->getNewRules();
+    resolver->findAnomalies(rule);
+    vector<void *> rules = resolver->getNewRules();
+    ASSERT_TRUE(resolver->remove(1));
+    ASSERT_TRUE(resolver->getNewRules().size() == 0);
 }
 
 

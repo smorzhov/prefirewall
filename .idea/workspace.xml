@@ -53,7 +53,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b6aa622f-ee61-498b-b9a9-6da1cdd03199" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp" afterPath="$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp" afterPath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h" afterPath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h" />
@@ -61,7 +65,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.h" afterPath="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp" afterPath="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.h" afterPath="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/RuleWrappers/RuleWrapper.h" afterPath="$PROJECT_DIR$/cpp/RuleWrappers/RuleWrapper.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preFirewall.js" afterPath="$PROJECT_DIR$/preFirewall.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests.txt" afterPath="$PROJECT_DIR$/tests.txt" />
@@ -85,11 +88,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FloodlightACLRuleWrapper.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FloodlightACLRuleWrapper.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            <state relative-caret-position="-252">
+              <caret line="80" column="67" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -98,8 +101,8 @@
       <file leaf-file-name="Rule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+            <state relative-caret-position="536">
+              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -108,8 +111,8 @@
       <file leaf-file-name="FloodlightFirewallRule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+            <state relative-caret-position="393">
+              <caret line="102" column="53" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -119,7 +122,7 @@
         <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
-              <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -128,18 +131,8 @@
       <file leaf-file-name="FloodlightACLRule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+            <state relative-caret-position="333">
+              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -148,41 +141,51 @@
       <file leaf-file-name="FloodlightFirewallRuleWrapper.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="150" selection-end-column="5" />
+            <state relative-caret-position="453">
+              <caret line="147" column="50" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RuleWrapper.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/RuleWrapper.h">
+      <file leaf-file-name="AnomaliesResolverWrapper.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FloodlightFirewallRuleWrapper.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="35" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnomaliesResolverWrapper.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="26" column="81" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="81" />
+            <state relative-caret-position="375">
+              <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
               <folding>
-                <element signature="e#57#79#0" expanded="true" />
+                <element signature="e#43#80#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnomaliesResolver.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnomaliesResolver.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlgorithmCheckFirewall.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="260" column="53" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,7 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PreFirewallSrc/IPAddresses/IPv4Address.cpp" />
         <option value="$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheck.cpp" />
         <option value="$PROJECT_DIR$/PreFirewallTests/BasicTests/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/PreFirewallSrc/Rules/FloodlightFirewallRule.h" />
@@ -241,25 +243,26 @@
         <option value="$PROJECT_DIR$/binding.gyp" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckACL.cpp" />
-        <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h" />
         <option value="$PROJECT_DIR$/ACLRule.js" />
         <option value="$PROJECT_DIR$/aclRule.js" />
         <option value="$PROJECT_DIR$/firewallRule.js" />
         <option value="$PROJECT_DIR$/cpp/PreFirewallNode.cpp" />
         <option value="$PROJECT_DIR$/preFirewall.js" />
-        <option value="$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp" />
-        <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp" />
-        <option value="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp" />
         <option value="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h" />
-        <option value="$PROJECT_DIR$/cpp/RuleWrappers/RuleWrapper.h" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h" />
+        <option value="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.h" />
+        <option value="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.h" />
+        <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h" />
+        <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp" />
+        <option value="$PROJECT_DIR$/floodlight.js" />
+        <option value="$PROJECT_DIR$/cpp/RuleWrappers/RuleWrapper.h" />
+        <option value="$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp" />
         <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h" />
         <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h" />
-        <option value="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.h" />
+        <option value="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h" />
         <option value="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp" />
-        <option value="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.h" />
         <option value="$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.cpp" />
+        <option value="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp" />
       </list>
     </option>
   </component>
@@ -506,10 +509,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="ShadowingACLRules.resloveAnomalies" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PreFirewall" TARGET_NAME="runBasicTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PreFirewall" RUN_TARGET_NAME="runBasicTests" TEST_CLASS="ShadowingACLRules" TEST_METHOD="resloveAnomalies" TEST_MODE="SUITE_TEST">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="All in FirewallRulesGeneralCase" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PreFirewall" TARGET_NAME="runBasicTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PreFirewall" RUN_TARGET_NAME="runBasicTests" TEST_CLASS="FirewallRulesGeneralCase" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
@@ -517,7 +516,11 @@
     <configuration default="false" name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
-    <configuration default="false" name="smallTest.findAnomalies" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PreFirewall" TARGET_NAME="runBasicTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PreFirewall" RUN_TARGET_NAME="runBasicTests" TEST_CLASS="smallTest" TEST_METHOD="findAnomalies" TEST_MODE="SUITE_TEST">
+    <configuration default="false" name="smallTest.findAnomalies" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PreFirewall" TARGET_NAME="runBasicTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PreFirewall" RUN_TARGET_NAME="runBasicTests" TEST_CLASS="smallTest" TEST_METHOD="findAnomalies" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="DISABLED_smallTest.findAnomalies" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PreFirewall" TARGET_NAME="runBasicTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PreFirewall" RUN_TARGET_NAME="runBasicTests" TEST_CLASS="DISABLED_smallTest" TEST_METHOD="findAnomalies" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
     </configuration>
@@ -757,18 +760,18 @@
       <item index="9" class="java.lang.String" itemvalue="Application.runBasicTests" />
       <item index="10" class="java.lang.String" itemvalue="Node.js.test" />
       <item index="11" class="java.lang.String" itemvalue="Google Test.ShadowingFirewallRules.resolveAnomalies" />
-      <item index="12" class="java.lang.String" itemvalue="Google Test.ShadowingACLRules.resloveAnomalies" />
-      <item index="13" class="java.lang.String" itemvalue="Google Test.All in FirewallRulesGeneralCase" />
-      <item index="14" class="java.lang.String" itemvalue="Node.js.server.js" />
-      <item index="15" class="java.lang.String" itemvalue="Google Test.smallTest.findAnomalies" />
+      <item index="12" class="java.lang.String" itemvalue="Google Test.All in FirewallRulesGeneralCase" />
+      <item index="13" class="java.lang.String" itemvalue="Node.js.server.js" />
+      <item index="14" class="java.lang.String" itemvalue="Google Test.smallTest.findAnomalies" />
+      <item index="15" class="java.lang.String" itemvalue="Google Test.DISABLED_smallTest.findAnomalies" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Google Test.smallTest.findAnomalies" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.server.js" />
-        <item index="2" class="java.lang.String" itemvalue="Google Test.All in FirewallRulesGeneralCase" />
-        <item index="3" class="java.lang.String" itemvalue="Google Test.ShadowingFirewallRules.resolveAnomalies" />
-        <item index="4" class="java.lang.String" itemvalue="Google Test.ShadowingACLRules.resloveAnomalies" />
+        <item index="1" class="java.lang.String" itemvalue="Google Test.DISABLED_smallTest.findAnomalies" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.server.js" />
+        <item index="3" class="java.lang.String" itemvalue="Google Test.All in FirewallRulesGeneralCase" />
+        <item index="4" class="java.lang.String" itemvalue="Google Test.ShadowingFirewallRules.resolveAnomalies" />
       </list>
     </recent_temporary>
   </component>
@@ -842,30 +845,19 @@
       <option name="project" value="LOCAL" />
       <updated>1461238208923</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Starting to add floodlight interaction">
+      <created>1461246657978</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1461246657978</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RedundancyFirewallRules_resolveAnomalies - 2016.03.31 at 19h 14m 18s.xml">
-      <configuration name="RedundancyFirewallRules.resolveAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="RedundancyFirewallRules_resolveAnomalies - 2016.03.31 at 19h 15m 07s.xml">
-      <configuration name="RedundancyFirewallRules.resolveAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="ShadowingACLRules_resloveAnomalies - 2016.03.31 at 19h 17m 22s.xml">
-      <configuration name="ShadowingACLRules.resloveAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="ShadowingFirewallRules_resolveAnomalies - 2016.03.31 at 19h 16m 44s.xml">
-      <configuration name="ShadowingFirewallRules.resolveAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="ShadowingFirewallRules_resolveAnomalies - 2016.03.31 at 19h 23m 07s.xml">
-      <configuration name="ShadowingFirewallRules.resolveAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="smallTest_findAnomalies - 2016.04.21 at 11h 18m 56s.xml">
-      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="smallTest_findAnomalies - 2016.04.21 at 11h 22m 46s.xml">
-      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
+    <history-entry file="DISABLED_smallTest_findAnomalies - 2016.04.22 at 15h 45m 51s.xml">
+      <configuration name="DISABLED_smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
     <history-entry file="smallTest_findAnomalies - 2016.04.21 at 11h 25m 08s.xml">
       <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
@@ -874,6 +866,24 @@
       <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
     <history-entry file="smallTest_findAnomalies - 2016.04.21 at 11h 27m 25s.xml">
+      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="smallTest_findAnomalies - 2016.04.22 at 15h 41m 37s.xml">
+      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="smallTest_findAnomalies - 2016.04.22 at 15h 42m 56s.xml">
+      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="smallTest_findAnomalies - 2016.04.22 at 15h 43m 17s.xml">
+      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="smallTest_findAnomalies - 2016.04.22 at 15h 45m 46s.xml">
+      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="smallTest_findAnomalies - 2016.04.22 at 15h 46m 18s.xml">
+      <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="smallTest_findAnomalies - 2016.04.22 at 15h 47m 01s.xml">
       <configuration name="smallTest.findAnomalies" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
   </component>
@@ -893,7 +903,7 @@
     <frame x="59" y="-4" width="1307" height="772" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2926249" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29738304" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.4876494" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.47196263" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49402392" order="11" side_tool="false" content_ui="tabs" />
@@ -932,7 +942,8 @@
     <MESSAGE value="wrappers changed" />
     <MESSAGE value="continue working on server side.&#10;fix some issues in wrappers classes" />
     <MESSAGE value="Fix findAnomalies() bug in AnomaliesResolverWrapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix findAnomalies() bug in AnomaliesResolverWrapper" />
+    <MESSAGE value="Starting to add floodlight interaction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting to add floodlight interaction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -944,24 +955,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp</url>
-          <line>282</line>
+          <line>281</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp</url>
-          <line>21</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp</url>
-          <line>260</line>
-          <option name="timeStamp" value="116" />
+          <url>file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp</url>
+          <line>135</line>
+          <option name="timeStamp" value="118" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="117" />
+      <option name="time" value="122" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeGoogleTestRunConfigurationType">
@@ -970,13 +976,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallNode.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -999,20 +998,6 @@
       </provider>
     </entry>
     <entry file="file:///usr/include/node/node.h" />
-    <entry file="file:///usr/include/node/v8.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3196" column="30" selection-start-line="3196" selection-start-column="30" selection-end-line="3196" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PreFirewallTests/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1081,13 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="2403" column="0" selection-start-line="2403" selection-start-column="0" selection-end-line="2403" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1197,7 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,7 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="80" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,94 +1193,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h">
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+        <state relative-caret-position="-135">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp">
+    <entry file="file:///usr/include/node/v8.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+        <state relative-caret-position="206">
+          <caret line="7368" column="21" selection-start-line="7368" selection-start-column="21" selection-end-line="7368" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="80" column="54" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="54" />
-          <folding>
-            <element signature="e#43#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="26" column="81" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="81" />
-          <folding>
-            <element signature="e#57#79#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        <state relative-caret-position="300">
+          <caret line="96" column="6" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
+    <entry file="file://$PROJECT_DIR$/floodlight.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+        <state relative-caret-position="570">
+          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        <state relative-caret-position="30">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/RuleWrapper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state relative-caret-position="255">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="35" selection-end-column="79" />
+        <state relative-caret-position="480">
+          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="e#57#79#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="260" column="53" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="102" column="53" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1312,24 +1302,42 @@
     <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="150" selection-end-column="5" />
+        <state relative-caret-position="536">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        <state relative-caret-position="-252">
+          <caret line="80" column="67" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="147" column="50" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="126" column="19" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+          <folding>
+            <element signature="e#43#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
