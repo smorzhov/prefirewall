@@ -28,11 +28,6 @@ namespace PreFirewall {
         FloodlightFirewallRuleWrapper::NewInstance(args);
     }
 
-    void Method(const FunctionCallbackInfo <Value> &args) {
-        Isolate *isolate = args.GetIsolate();
-        args.GetReturnValue().Set(String::NewFromUtf8(isolate, "Hello world!"));
-    }
-
     void InitAll(Local <Object> exports) {
         AnomaliesResolverWrapper::Init(exports->GetIsolate());
         FloodlightACLRuleWrapper::Init(exports->GetIsolate());
@@ -41,7 +36,6 @@ namespace PreFirewall {
         NODE_SET_METHOD(exports, "createAnomaliesResolver", CreateAnomaliesResolver);
         NODE_SET_METHOD(exports, "createFloodlightACLRule", CreateFloodlightACLRule);
         NODE_SET_METHOD(exports, "createFloodlightFirewallRule", CreateFloodlightFirewallRule);
-        NODE_SET_METHOD(exports, "helloWorld", Method);
     }
 
     NODE_MODULE(PreFirewall, InitAll)

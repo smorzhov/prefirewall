@@ -33,10 +33,10 @@ CFLAGS_CC_Debug := \
 	-std=gnu++0x
 
 INCS_Debug := \
-	-I/home/smorzhov/.node-gyp/5.10.1/include/node \
-	-I/home/smorzhov/.node-gyp/5.10.1/src \
-	-I/home/smorzhov/.node-gyp/5.10.1/deps/uv/include \
-	-I/home/smorzhov/.node-gyp/5.10.1/deps/v8/include
+	-I/home/smorzhov/.node-gyp/5.11.0/include/node \
+	-I/home/smorzhov/.node-gyp/5.11.0/src \
+	-I/home/smorzhov/.node-gyp/5.11.0/deps/uv/include \
+	-I/home/smorzhov/.node-gyp/5.11.0/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=PreFirewall' \
@@ -55,8 +55,6 @@ CFLAGS_Release := \
 	-Wall \
 	-std=c++11 \
 	-O3 \
-	-ffunction-sections \
-	-fdata-sections \
 	-fno-omit-frame-pointer
 
 # Flags passed to only C files.
@@ -69,10 +67,10 @@ CFLAGS_CC_Release := \
 	-std=gnu++0x
 
 INCS_Release := \
-	-I/home/smorzhov/.node-gyp/5.10.1/include/node \
-	-I/home/smorzhov/.node-gyp/5.10.1/src \
-	-I/home/smorzhov/.node-gyp/5.10.1/deps/uv/include \
-	-I/home/smorzhov/.node-gyp/5.10.1/deps/v8/include
+	-I/home/smorzhov/.node-gyp/5.11.0/include/node \
+	-I/home/smorzhov/.node-gyp/5.11.0/src \
+	-I/home/smorzhov/.node-gyp/5.11.0/deps/uv/include \
+	-I/home/smorzhov/.node-gyp/5.11.0/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/cpp/PreFirewallNode.o \

@@ -82,6 +82,7 @@ string FloodlightACLRule::actionToString() const {
 
 string FloodlightACLRule::toString() const {
     return string("{")
+            .append("\"ruleid\": \"").append(to_string(id)).append("\", ")
             .append("\"nw-proto\": \"").append(to_string((int) nwProto)).append("\", ")
             .append("\"src-ip\": \"").append(srcIp.getIp()).append("\", ")
             .append("\"dst-ip\": \"").append(dstIp.getIp()).append("\", ")

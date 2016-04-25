@@ -10,6 +10,8 @@ var firewallRule = require('./firewallRule');
 var aclRule = require('./aclRule');
 var floodlight = require('./floodlight');
 
+var firewallAnomaliesResolver = preFirewall.preFirewall.createAnomaliesResolver();
+var aclAnomaliesResolver = preFirewall.preFirewall.createAnomaliesResolver();
 var fileServer = new static.Server('.');
 
 function postRule(req, res, type) {
@@ -41,28 +43,26 @@ function postRule(req, res, type) {
                 break;
         }
         
-        var fRule;
+        var fRule, conflicts;
         switch (type) {
             case 'firewall':
                 fRule = preFirewall.createFirewallRule(rule);
+                conflicts = firewallAnomaliesResolver.findAnomalies(fRule);
                 break;
             case 'acl':
                 fRule = preFirewall.createACLRule(rule);
+                conflicts = aclAnomaliesResolver.findAnomalies(fRule);
                 break;
         }
         console.log(fRule.toString());
-        var rules = preFirewall.getRules(fRule);
-        var conflicts = preFirewall.findAnomalies(fRule)
-        var rules = preFirewall.getRules(fRule);
         var reply = "";
         if (conflicts.length == 0) {
             switch (type) {
                 case 'firewall':
-                    floodlight.sendRule(res, floodlight.firewallUrl, preFirewall, fRule);
-                    var rules = preFirewall.getRules(fRule);
+                    floodlight.sendRule(res, floodlight.firewallUrl, firewallAnomaliesResolver, fRule);
                     return;
                 case 'acl':
-                    floodlight.sendRule(res, floodlight.aclUrl, preFirewall, fRule);
+                    floodlight.sendRule(res, floodlight.aclUrl, aclAnomaliesResolver, fRule);
                     return;
             }
         }
@@ -90,13 +90,34 @@ function deleteRule(req, res, type) {
         }
         switch (type) {
             case 'firewall':
-                floodlight.removeRule(res, floodlight.firewallUrl, preFirewall, id);
+                floodlight.removeRule(res, floodlight.firewallUrl, firewallAnomaliesResolver, id);
                 return;
             case 'acl':
-                floodlight.removeRule(res, floodlight.aclUrl, preFirewall, id);
+                floodlight.removeRule(res, floodlight.aclUrl, aclAnomaliesResolver, id);
                 return;
         }
     })
+}
+
+function getRules(res, type) {
+    var rules;
+    switch (type) {
+        case 'firewall':
+            rules = firewallAnomaliesResolver.getRules();
+            break;
+        case 'acl':
+            rules = aclAnomaliesResolver.getRules();
+            break;
+    }
+    if (rules.length == 0) {
+        res.end("No rules\n");
+        return;
+    }
+    var reply = "";
+    for (var i = 0; i < rules.length; i++) {
+        reply += rules[i].toString() + '\n';
+    }
+    res.end(reply);
 }
 
 function accept(req, res) {
@@ -109,6 +130,9 @@ function accept(req, res) {
             if (req.method == 'DELETE') {
                 deleteRule(req, res, 'firewall');
             }
+            if (req.method == 'GET') {
+                getRules(res, 'firewall');
+            }
             return;
         case '/acl/rules/json':
             if (req.method == 'POST') {
@@ -116,6 +140,9 @@ function accept(req, res) {
             }
             if (req.method == 'DELETE') {
                 deleteRule(req, res, 'acl');
+            }
+            if (req.method == 'GET') {
+                getRules(res, 'acl');
             }
             return;
         default:

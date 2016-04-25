@@ -144,6 +144,7 @@ string FloodlightFirewallRule::actionToString() const {
 
 std::string FloodlightFirewallRule::toString() const {
     return string("{")
+            .append("\"ruleid\": \"").append(to_string(id)).append("\", ")
             .append("\"switchid\": \"").append(switchId).append("\", ")
             .append("\"src-inport\": \"").append(to_string(srcInport)).append("\", ")
             .append("\"src-mac\": \"").append(srcMac).append("\", ")
