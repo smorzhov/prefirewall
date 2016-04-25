@@ -9,10 +9,7 @@ exports.isValid = function (rule) {
 
 function isProtocolValid(proto) {
     if (proto == null) return true;
-    return proto.toLowerCase() == 'any' || proto == 0 ||
-        proto.toLowerCase() == 'tcp' || proto == 6 ||
-        proto == 'udp'.toLowerCase() || proto == 11 ||
-        proto == 'icmp'.toLowerCase() || proto == 1;
+    return proto == 'any' || proto == 'tcp' || proto == 'udp' || proto == 'icmp';
 }
 
 function isIpValid(ip) {
@@ -23,10 +20,10 @@ function isIpValid(ip) {
 }
 
 function isActionValid(action) {
-    return action.toLowerCase() == 'allow' || action.toLowerCase() == 'deny';
+    return action == 'allow' || action == 'deny';
 }
 
 function isPortValid(port) {
     if (port == null) return true;
-    return Number.isInteger(port) && port >= 0 && port < 0xff;
+    return Number.isInteger(port) && port >= 0 && port < 0xffff;
 }

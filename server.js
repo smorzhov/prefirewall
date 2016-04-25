@@ -24,7 +24,7 @@ function postRule(req, res, type) {
         try {
             rule = JSON.parse(str);
         } catch (err) {
-            console.log(err);
+            console.log(err + ". JSON.parse(str) crashed!\n");
             res.end("Incorrect JSON!\n");
             return;
         }
@@ -71,6 +71,7 @@ function postRule(req, res, type) {
             reply += JSON.stringify(conflicts[i]) + "\n";
         }
         res.end(reply);
+        return;
     })
 }
 

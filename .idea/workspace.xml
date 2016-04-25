@@ -53,16 +53,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b6aa622f-ee61-498b-b9a9-6da1cdd03199" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Makefile" afterPath="$PROJECT_DIR$/build/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/PreFirewall.target.mk" afterPath="$PROJECT_DIR$/build/PreFirewall.target.mk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/config.gypi" afterPath="$PROJECT_DIR$/build/config.gypi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp" afterPath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h" afterPath="$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallNode.cpp" afterPath="$PROJECT_DIR$/cpp/PreFirewallNode.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aclRule.js" afterPath="$PROJECT_DIR$/aclRule.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firewallRule.js" afterPath="$PROJECT_DIR$/firewallRule.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/preFirewall.js" afterPath="$PROJECT_DIR$/preFirewall.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests.txt" afterPath="$PROJECT_DIR$/tests.txt" />
     </list>
     <ignored path="PreFirewall.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,7 +81,7 @@
       <file leaf-file-name="FloodlightACLRuleWrapper.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1803">
+            <state relative-caret-position="1935">
               <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
               <folding />
             </state>
@@ -96,7 +91,7 @@
       <file leaf-file-name="Rule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="720">
               <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
               <folding />
             </state>
@@ -106,7 +101,7 @@
       <file leaf-file-name="FloodlightFirewallRule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
+            <state relative-caret-position="1500">
               <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
               <folding />
             </state>
@@ -116,8 +111,18 @@
       <file leaf-file-name="FloodlightFirewallRule.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
+            <state relative-caret-position="2190">
               <caret line="146" column="55" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloodlightFirewallRuleWrapper.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="98" column="41" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -126,7 +131,7 @@
       <file leaf-file-name="AnomaliesResolverWrapper.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
+            <state relative-caret-position="1286">
               <caret line="108" column="93" selection-start-line="108" selection-start-column="93" selection-end-line="108" selection-end-column="93" />
               <folding>
                 <element signature="e#43#80#0" expanded="true" />
@@ -145,11 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FloodlightACLRule.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FloodlightACLRule.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+            <state relative-caret-position="420">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -158,7 +163,7 @@
       <file leaf-file-name="AnomaliesResolverWrapper.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="510">
               <caret line="34" column="85" selection-start-line="34" selection-start-column="85" selection-end-line="34" selection-end-column="85" />
               <folding />
             </state>
@@ -168,18 +173,8 @@
       <file leaf-file-name="AnomaliesResolver.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="225">
               <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnomaliesResolver.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -854,7 +849,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461332967325</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Changes:&#10;- rule.toString() - added ruleid;&#10;- AnomaliesResolver.GetRules() - fix issue, it's now return string[ ] object;&#10;- request method 'GET' handling was added;&#10;- preFirewall.js has been changed (removed unnecessary exports);">
+      <created>1461580043772</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1461580043772</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -903,14 +905,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="24" width="1307" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30214116" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30140188" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.4876494" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49402392" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.50311524" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="184" y="224" width="1101" height="544" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49688473" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49374023" order="10" side_tool="false" content_ui="tabs" />
@@ -919,9 +919,11 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.47196263" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="184" y="224" width="1101" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49402392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39814815" sideWeight="0.4876494" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -946,7 +948,8 @@
     <MESSAGE value="Fix findAnomalies() bug in AnomaliesResolverWrapper" />
     <MESSAGE value="Starting to add floodlight interaction" />
     <MESSAGE value="Changes:&#10;- fix some memory issues;&#10;- get/set rule ides (c++, js);&#10;- post rule to floodlight (js);&#10;- delete rule from floodlight (js);" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- fix some memory issues;&#10;- get/set rule ides (c++, js);&#10;- post rule to floodlight (js);&#10;- delete rule from floodlight (js);" />
+    <MESSAGE value="Changes:&#10;- rule.toString() - added ruleid;&#10;- AnomaliesResolver.GetRules() - fix issue, it's now return string[ ] object;&#10;- request method 'GET' handling was added;&#10;- preFirewall.js has been changed (removed unnecessary exports);" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- rule.toString() - added ruleid;&#10;- AnomaliesResolver.GetRules() - fix issue, it's now return string[ ] object;&#10;- request method 'GET' handling was added;&#10;- preFirewall.js has been changed (removed unnecessary exports);" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1140,7 +1143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
           <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1170,7 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="7368" column="21" selection-start-line="7368" selection-start-column="21" selection-end-line="7368" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1192,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1236,19 +1235,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="147" column="50" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="80" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1256,13 +1246,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="1470">
           <caret line="98" column="24" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
           <folding />
         </state>
@@ -1270,7 +1259,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="225">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
@@ -1278,8 +1267,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="510">
           <caret line="34" column="85" selection-start-line="34" selection-start-column="85" selection-end-line="34" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1286">
+          <caret line="108" column="93" selection-start-line="108" selection-start-column="93" selection-end-line="108" selection-end-column="93" />
+          <folding>
+            <element signature="e#43#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="146" column="55" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1292,52 +1331,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightACLRuleWrapper.cpp">
+    <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1803">
-          <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/AnomaliesResolverWrapper/AnomaliesResolverWrapper.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="108" column="93" selection-start-line="108" selection-start-column="93" selection-end-line="108" selection-end-column="93" />
-          <folding>
-            <element signature="e#43#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/Rule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="146" column="55" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+        <state relative-caret-position="41">
+          <caret line="98" column="41" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
           <folding />
         </state>
       </provider>
