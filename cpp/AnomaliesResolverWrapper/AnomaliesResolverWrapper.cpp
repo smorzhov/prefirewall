@@ -85,7 +85,8 @@ namespace PreFirewall {
         }
         RuleWrapper* rule = ObjectWrap::Unwrap<RuleWrapper>(args[0]->ToObject());
 
-        vector<void *> conflictedRules = anomaliesResolverWrapper->anomaliesResolver->findAnomalies(rule->GetRule());
+        vector<AnomaliesResolver::Conflict *> conflictedRules =
+                anomaliesResolverWrapper->anomaliesResolver->findAnomalies(rule->GetRule());
         Local<Array> resultList = Array::New(isolate);
         for (unsigned int i = 0; i < conflictedRules.size(); ++i) {
             Local<Object> r = Object::New(isolate);

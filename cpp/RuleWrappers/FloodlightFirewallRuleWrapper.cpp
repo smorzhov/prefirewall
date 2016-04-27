@@ -75,8 +75,10 @@ namespace PreFirewall {
         args.GetReturnValue().Set(instance);
     }
 
-    void FloodlightFirewallRuleWrapper::PackRule(Isolate *isolate, Local<Object>& obj, void *rule) const {
-        FloodlightFirewallRule *r = static_cast<FloodlightFirewallRule *>(rule);
+    void FloodlightFirewallRuleWrapper::PackRule(Isolate *isolate, Local<Object>& obj,
+                                                 AnomaliesResolver::Conflict *rule) const {
+        FloodlightFirewallRule *r = static_cast<FloodlightFirewallRule *>(rule->rule);
+        obj->Set(String::NewFromUtf8(isolate, "type"), v8::Int32::New(isolate, (int32_t)rule->type));
         obj->Set(String::NewFromUtf8(isolate, "rule-id"), v8::Int32::New(isolate, r->getId()));
         obj->Set(String::NewFromUtf8(isolate, "switchid"), v8::String::NewFromUtf8(isolate, r->getSwitchId().c_str()));
         obj->Set(String::NewFromUtf8(isolate, "src-inport"), v8::Int32::New(isolate, (int) r->getSrcInport()));

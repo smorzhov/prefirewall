@@ -75,8 +75,10 @@ namespace PreFirewall {
         args.GetReturnValue().Set(instance);
     }
 
-    void FloodlightACLRuleWrapper::PackRule(Isolate *isolate, Local<Object>& obj, void *rule) const {
-        FloodlightACLRule *r = static_cast<FloodlightACLRule *>(rule);
+    void FloodlightACLRuleWrapper::PackRule(Isolate *isolate, Local<Object>& obj,
+                                            AnomaliesResolver::Conflict *rule) const {
+        FloodlightACLRule *r = static_cast<FloodlightACLRule *>(rule->rule);
+        obj->Set(String::NewFromUtf8(isolate, "type"), v8::Int32::New(isolate, (int32_t)rule->type));
         obj->Set(String::NewFromUtf8(isolate, "rule-id"), v8::Int32::New(isolate, r->getId()));
         obj->Set(String::NewFromUtf8(isolate, "nw-proto"), v8::Int32::New(isolate, (int) r->getNwProto()));
         obj->Set(String::NewFromUtf8(isolate, "src-ip"),

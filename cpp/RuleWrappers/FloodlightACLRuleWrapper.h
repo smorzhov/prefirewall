@@ -8,6 +8,7 @@
 #include <string>
 #include "../PreFirewallSrc/Rules/FloodlightACLRule.h"
 #include "RuleWrapper.h"
+#include "../PreFirewallSrc/Algorithm/AnomaliesResolver.h"
 
 namespace PreFirewall {
 
@@ -19,7 +20,7 @@ namespace PreFirewall {
 
         virtual void *GetRule() const { return rule; };
 
-        virtual void PackRule(v8::Isolate *, v8::Local<v8::Object>&, void *) const override;
+        virtual void PackRule(v8::Isolate *, v8::Local<v8::Object>&, AnomaliesResolver::Conflict *) const override;
 
         static void *UnpackRule(v8::Isolate *isolate, const v8::FunctionCallbackInfo<v8::Value> &args);
 

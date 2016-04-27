@@ -245,20 +245,17 @@ TEST_F(FirewallRulesGeneralCase, resolveAnomalies) {
     }
 }
 
-TEST(smallTest, findAnomalies) {
-    //"src-ip": "192.168.0.1/28", "dl-type": 2048, "action": "allow"
-     FloodlightFirewallRule *rule = new FloodlightFirewallRule(
-                (string &&) "00:00:00:00:00:00:00:00", 2,
-                (string &&) "00:00:00:00:00:00", (string &&) "00:00:00:00:00:00",
-                (short) FloodlightFirewallRule::DlType::IPv4,
-                (string &&) "192.168.0.1/28", (string &&) "0.0.0.0/0", (short) FloodlightFirewallRule::NwProto::ANY,
-                0, 0, 0, (string &&) "allow");
-    rule->setId(1);
-    AnomaliesResolver *resolver = new AnomaliesResolver();
-    resolver->findAnomalies(rule);
-    vector<void *> rules = resolver->getNewRules();
-    ASSERT_TRUE(resolver->remove(1));
-    ASSERT_TRUE(resolver->getNewRules().size() == 0);
+TEST_F(FirewallRulesGeneralCase, findAnomalies) {
+    vector<AnomaliesResolver::Conflict *> conflicts;
+    for (int i = 0; i < oldRules.size(); ++i) {
+        conflicts = resolver->findAnomalies(oldRules[i]);
+        result = resolver->getNewRules();
+    }
+    result = resolver->getNewRules();
+    ASSERT_TRUE(result.size() == newRules.size());
+    for (int i = 0; i < newRules.size(); ++i) {
+        ASSERT_TRUE(((FloodlightFirewallRule *)result[i])->equals(newRules[i]));
+    }
 }
 
 

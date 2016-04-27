@@ -56,19 +56,34 @@ function postRule(req, res, type) {
         }
         console.log(fRule.toString());
         var reply = "";
-        if (conflicts.length == 0) {
-            switch (type) {
-                case 'firewall':
-                    floodlight.sendRule(res, floodlight.firewallUrl, firewallAnomaliesResolver, fRule);
-                    return;
-                case 'acl':
-                    floodlight.sendRule(res, floodlight.aclUrl, aclAnomaliesResolver, fRule);
-                    return;
+        var mustBeAdded = false;
+        for (var i = 0; i < conflicts.length; i++) {
+            if (conflicts[i].type == 0) {
+                reply = "Conflicts detected! The rule was not added.\n";
+                reply += JSON.stringify(conflicts[i]) + "\n";
+            } else {  
+                var id = {"ruleid": conflicts[i]['rule-id']};
+                switch (type) {
+                    case 'firewall':
+                        floodlight.removeRuleFromFloodlight(res, floodlight.firewallUrl, id);
+                        mustBeAdded = true;
+                        break;
+                    case 'acl':
+                        floodlight.removeRuleFromFloodlight(res, floodlight.aclUrl, id);
+                        mustBeAdded = true;
+                        break;
+                }
             }
         }
-        reply = "Conflicts detected! These rules were not added.\n";
-        for (var i = 0; i < conflicts.length; i++) {
-            reply += JSON.stringify(conflicts[i]) + "\n";
+        if (conflicts.length == 0 || mustBeAdded) {
+            switch (type) {
+                case 'firewall':
+                    floodlight.sendRule(res, floodlight.firewallUrl, firewallAnomaliesResolver, rule, fRule);
+                    return;
+                case 'acl':
+                    floodlight.sendRule(res, floodlight.aclUrl, aclAnomaliesResolver, rule, fRule);
+                    return;
+            }
         }
         res.end(reply);
         return;

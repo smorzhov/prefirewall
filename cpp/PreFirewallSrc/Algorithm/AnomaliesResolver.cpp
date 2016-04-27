@@ -5,13 +5,13 @@
 #include <algorithm>
 #include <fstream>
 #include "AnomaliesResolver.h"
-#include "../Rules/Rule.h"
 
-vector<void *> AnomaliesResolver::findAnomalies(void *rule) {
+vector<AnomaliesResolver::Conflict *> AnomaliesResolver::findAnomalies(void *rule) {
     oldRules.clear();
     oldRules.push_back(rule);
+    oldRule = rule;
     for (unsigned int i = 0; i < conflictedRules.size(); ++i) {
-        delete (Rule *)conflictedRules[i];
+        delete conflictedRules[i];
     }
     conflictedRules.clear();
     while (!changes.empty()) {
@@ -34,7 +34,9 @@ void AnomaliesResolver::resolveAnomalies() {
             if (r->isSubset(s)) {
                 if (r->getAction() == s->getAction() || r->getPriority() > s->getPriority()) {
                     changes.push(new Change(ChangeType::REMOVAL, i, r->clone()));
-                    conflictedRules.push_back(r->clone());
+                    if (oldRule != 0 && (Rule *) r->equals(oldRule))
+                        conflictedRules.push_back(new Conflict(0, r->clone()));
+                    else conflictedRules.push_back(new Conflict(1, r->clone()));
                     newRules.erase(newRules.begin() + i);
                     i--;
                 }
@@ -70,11 +72,11 @@ bool AnomaliesResolver::resolve(void *rule1, void *rule2, int index) {
     if (r->equals(s)) {
         if (r->getAction() != s->getAction()) {
             changes.push(new Change(ChangeType::ANOMALY, index, s->clone()));
-            conflictedRules.push_back(s->clone());
+            conflictedRules.push_back(new Conflict(0, s->clone()));
             s->setAction(Rule::Action::DENY);
         } else {
             //removal (we don't push r into the newRules vector)
-            conflictedRules.push_back(s->clone());
+            conflictedRules.push_back(new Conflict(0, s->clone()));
         }
         return true;
     }
@@ -82,7 +84,7 @@ bool AnomaliesResolver::resolve(void *rule1, void *rule2, int index) {
         if (r->getPriority() != -1 && s->getPriority() != -1 &&
             r->getPriority() > s->getPriority()) {
             //removal (we don't push r into the newRules vector)
-            conflictedRules.push_back(s->clone());
+            conflictedRules.push_back(new Conflict(0, s->clone()));
             return true;
         }
         changes.push(new Change(ChangeType::ADDITION, index, nullptr));
@@ -162,7 +164,7 @@ bool AnomaliesResolver::loadRulesFromFile(char *fileName) {
 
 AnomaliesResolver::~AnomaliesResolver() {
     for (unsigned int i = 0; i < conflictedRules.size(); ++i) {
-        delete (Rule *)conflictedRules[i];
+        delete conflictedRules[i];
     }
     conflictedRules.clear();
     while (!changes.empty()) {

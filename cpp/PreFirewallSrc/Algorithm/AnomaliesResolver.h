@@ -8,11 +8,27 @@
 #include <stack>
 #include <string>
 #include <string.h>
+#include "../Rules/Rule.h"
 
 using namespace std;
 
 class AnomaliesResolver {
 public:
+    struct Conflict {
+        /**
+         * 0 - conflict / the rule wasn't added
+         * 1 - was deleted
+         */
+        int8_t type;
+        void * rule;
+
+        Conflict(int8_t type, void *rule) : type(type), rule(rule) { }
+
+        virtual ~Conflict() {
+            delete (Rule *) rule;
+        }
+    };
+
     const vector<void *> &getNewRules() const { return newRules; }
 
     //todo в newRules добавить 0 правило, запрещающее все
@@ -22,7 +38,7 @@ public:
 
     void resolveAnomalies();
 
-    vector<void *> findAnomalies(void *);
+    vector<Conflict *> findAnomalies(void *);
 
     void undoChanges();
 
@@ -46,6 +62,7 @@ protected:
 
 private:
     vector<void *> oldRules;
+    void *oldRule = 0;
     vector<void *> newRules;
 
     enum class ChangeType {
@@ -62,7 +79,7 @@ private:
     };
 
     stack<Change *> changes;
-    vector<void *> conflictedRules;
+    vector<Conflict *> conflictedRules;
 
     bool resolveMode;
 };
