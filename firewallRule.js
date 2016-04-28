@@ -27,7 +27,15 @@ function isMacValid(mac) {
 }
 
 function isDlTypeValid(dlType) {
-    return dlType == 'arp' || dlType == 'ipv4';
+    if (dlType == null) return true;
+    if (dlType.isInteger()) {
+        return dlType == 2048 || dlType == 2054;
+    }
+    if (typeof dlType === "string" || dlType instanceof String) {
+        var dl = dlType.toLowerCase();
+        return dl == 'arp' || dl == 'ipv4';
+    }
+    return false;
 }
 
 function isIpValid(ip) {
@@ -39,7 +47,14 @@ function isIpValid(ip) {
 
 function isProtocolValid(proto) {
     if (proto == null) return true;
-    return proto == 'any' || proto == 'tcp' || proto == 'udp' || proto == 'icmp';
+    if (proto.isInteger()) {
+        return p == 0 || p == 1 || p == 6 || p == 17;
+    }
+    if (typeof proto === "string" || proto instanceof String) {
+        var p = proto.toLowerCase();
+        return p == 'any' || p == 'tcp' || p == 'udp' || p == 'icmp';
+    }
+    return false;
 }
 
 function isPriorituValid(priority) {
@@ -48,5 +63,9 @@ function isPriorituValid(priority) {
 }
 
 function isActionValid(action) {
-    return action == 'allow' || action == 'deny';
+    if (typeof action === "string" || action instanceof String) {
+        var a = action.toLowerCase()
+        return a == 'allow' || a == 'deny';
+    }
+    return false;
 }

@@ -9,7 +9,13 @@ exports.isValid = function (rule) {
 
 function isProtocolValid(proto) {
     if (proto == null) return true;
-    return proto == 'any' || proto == 'tcp' || proto == 'udp' || proto == 'icmp';
+    if (proto.isInteger()) {
+        return proto == 0 || proto == 6 || proto == 11 || proto == 1;
+    }
+    if (typeof proto === "string" || proto instanceof String) {
+        var p = proto.toLowerCase();
+        return p == 'any' || p == 'tcp' || p == 'udp' || p == 'icmp';
+    }
 }
 
 function isIpValid(ip) {

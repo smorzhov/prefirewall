@@ -139,7 +139,7 @@ function getRules(res, type) {
 function accept(req, res) {
     var urlParsed = url.parse(req.url, true);
     switch (urlParsed.pathname) {
-        case '/firewall/rules/json':
+        case '/wm/firewall/rules/json':
             if (req.method == 'POST') {
                 postRule(req, res, 'firewall');
             }
@@ -150,7 +150,7 @@ function accept(req, res) {
                 getRules(res, 'firewall');
             }
             return;
-        case '/acl/rules/json':
+        case '/wm/acl/rules/json':
             if (req.method == 'POST') {
                 postRule(req, res, 'acl');
             }
