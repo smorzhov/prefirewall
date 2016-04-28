@@ -113,16 +113,17 @@ namespace PreFirewall {
         Handle<Value> tpDst = ruleObj->Get(String::NewFromUtf8(isolate, "tp-dst"));
         Handle<Value> priority = ruleObj->Get(String::NewFromUtf8(isolate, "priority"));
         Handle<Value> action = ruleObj->Get(String::NewFromUtf8(isolate, "action"));
-        String::Utf8Value(srcIp->ToString());
+        short proto = GetNwProto(nwProto);
+        short dl = GetDlType(dlType);
         Rule *rule = new FloodlightFirewallRule(
                 std::string(*(String::Utf8Value(switchId->ToString()))),
                 (short) srcInport->NumberValue(),
                 std::string(*(String::Utf8Value(srcMac->ToString()))),
                 std::string(*(String::Utf8Value(dstMac->ToString()))),
-                (short) dlType->NumberValue(),
+                dl,
                 std::string(*(String::Utf8Value(srcIp->ToString()))),
                 std::string(*(String::Utf8Value(dstIp->ToString()))),
-                (short) nwProto->NumberValue(),
+                proto,
                 (short) tpSrc->NumberValue(),
                 (short) tpDst->NumberValue(),
                 (uint32_t) priority->NumberValue(),
@@ -130,6 +131,23 @@ namespace PreFirewall {
         );
         rule->setId(id->NumberValue());
         return rule;
+    }
+
+    short FloodlightFirewallRuleWrapper::GetNwProto(v8::Handle<v8::Value> &nwProto) {
+        if (nwProto->IsNumber()) return (short)nwProto->Int32Value();
+        string proto = *(String::Utf8Value(nwProto->ToString()));
+        if (proto == "tcp" || proto == "TCP") return (short)6;
+        if (proto == "udp" || proto == "UDP") return (short)17;
+        if (proto == "icmp" || proto == "ICMP") return (short)1;
+        return 0;
+    }
+
+    short FloodlightFirewallRuleWrapper::GetDlType(v8::Handle<v8::Value> &dlType) {
+        if (dlType->IsNumber()) return (short)dlType->Int32Value();
+        string dl = *(String::Utf8Value(dlType->ToString()));
+        if (dl == "arp" || dl == "ARP") return (short)2054;
+        if (dl == "ipv4" || dl == "IPV4" || dl == "IPv4") return (short)2048;
+        return 0;
     }
 
     void FloodlightFirewallRuleWrapper::ToString(const v8::FunctionCallbackInfo<v8::Value> &args) {

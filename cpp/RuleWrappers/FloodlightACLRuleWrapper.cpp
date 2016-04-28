@@ -99,7 +99,6 @@ namespace PreFirewall {
         Handle<Value> dstIp = ruleObj->Get(String::NewFromUtf8(isolate, "dst-ip"));
         Handle<Value> tpDst = ruleObj->Get(String::NewFromUtf8(isolate, "tp-dst"));
         Handle<Value> action = ruleObj->Get(String::NewFromUtf8(isolate, "action"));
-        String::Utf8Value(srcIp->ToString());
         Rule *rule = new FloodlightACLRule(
                 (short) nwProto->NumberValue(),
                 std::string(*(String::Utf8Value(srcIp->ToString()))),
@@ -109,6 +108,15 @@ namespace PreFirewall {
         );
         rule->setId(id->NumberValue());
         return rule;
+    }
+
+    short FloodlightACLRuleWrapper::GetNwProto(v8::Handle<v8::Value> & nwProto) {
+        if (nwProto->IsNumber()) return (short)nwProto->Int32Value();
+        string proto = *(String::Utf8Value(nwProto->ToString()));
+        if (proto == "tcp" || proto == "TCP") return (short)6;
+        if (proto == "udp" || proto == "UDP") return (short)11;
+        if (proto == "icmp" || proto == "ICMP") return (short)1;
+        return 0;
     }
 
     void FloodlightACLRuleWrapper::ToString(const v8::FunctionCallbackInfo<v8::Value> &args) {

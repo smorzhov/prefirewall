@@ -32,13 +32,13 @@ FloodlightFirewallRule::FloodlightFirewallRule(string&& switchId, short srcInpor
     anyDstIp = isAnyIp(dstIp);
     switch (nwProto) {
         case 1:
-            this->nwProto = NwProto::UDP;
+            this->nwProto = NwProto::ICMP;
             break;
         case 6:
             this->nwProto = NwProto::TCP;
             break;
         case 17:
-            this->nwProto = NwProto::ICMP;
+            this->nwProto = NwProto::UDP;
             break;
         default:
             this->nwProto = NwProto::ANY;

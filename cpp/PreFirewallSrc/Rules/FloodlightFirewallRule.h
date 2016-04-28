@@ -17,7 +17,7 @@ public:
         ANY = 0, ARP = 2054, IPv4 = 2048
     };
     enum class NwProto {
-        ANY = 0, TCP = 6, UDP = 1, ICMP = 17
+        ANY = 0, TCP = 6, UDP = 17, ICMP = 1
     };
 
     FloodlightFirewallRule();

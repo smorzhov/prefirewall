@@ -28,6 +28,10 @@ namespace PreFirewall {
 
         ~FloodlightFirewallRuleWrapper();
 
+        static short GetNwProto(v8::Handle<v8::Value>&);
+
+        static short GetDlType(v8::Handle<v8::Value>&);
+
         static void New(const v8::FunctionCallbackInfo<v8::Value> &args);
 
         static void ToString(const v8::FunctionCallbackInfo<v8::Value> &args);
