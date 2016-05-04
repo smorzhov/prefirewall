@@ -28,7 +28,7 @@ function isMacValid(mac) {
 
 function isDlTypeValid(dlType) {
     if (dlType == null) return true;
-    if (dlType.isInteger()) {
+    if (Number.isInteger(dlType)) {
         return dlType == 2048 || dlType == 2054;
     }
     if (typeof dlType === "string" || dlType instanceof String) {
@@ -47,7 +47,7 @@ function isIpValid(ip) {
 
 function isProtocolValid(proto) {
     if (proto == null) return true;
-    if (proto.isInteger()) {
+    if (Number.isInteger(proto)) {
         return p == 0 || p == 1 || p == 6 || p == 17;
     }
     if (typeof proto === "string" || proto instanceof String) {

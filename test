@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Set's up some Floodlight Firewall rules
+
+echo "Setting up some Floodlight Firewall rules through PreFirewall"
+curl -X POST -d '{"src-inport": 2, "dl-type": "ipv4", "src-ip": "10.10.0.0/16", "dst-ip": "192.168.1.0/24", "priority": 2, "action": "deny"}' http://localhost:8090/wm/firewall/rules/json
+echo ""
+curl -X POST -d '{"src-inport": 2, "dl-type": "ipv4", "src-ip": "10.10.0.0/16", "dst-ip": "192.168.1.0/24", "nw-proto": "tcp", "tp-src": 10, "tp-dst": 10, "priority": 2, "action": "deny"}' http://localhost:8090/wm/firewall/rules/json
+echo ""
+curl -X POST -d '{"src-inport": 2, "dst-mac": "00:00:00:00:00:01", "dl-type": "ipv4", "src-ip": "10.10.0.0/16", "dst-ip": "192.168.1.0/24", "nw-proto": "tcp", "tp-src": 10, "tp-dst": 10, "priority": 1, "action": "allow"}' http://localhost:8090/wm/firewall/rules/json
+curl -X POST -d '{"switchid": "00:00:00:00:00:00:00:01", "src-inport": 3, "src-mac": "00:00:00:00:00:01", "dst-mac": "00:00:00:00:00:02", "dl-type": "ipv4", "src-ip": "10.10.0.0/16", "dst-ip": "192.168.1.0/24", "nw-proto": "icmp", "tp-src": 20, "tp-dst": 30, "priority": 4, "action": "deny"}' http://localhost:8090/wm/firewall/rules/json
+curl -X POST -d '{"switchid": "00:00:00:00:00:00:00:01", "src-inport": 3, "src-mac": "00:00:00:00:00:01", "dst-mac": "00:00:00:00:00:02", "dl-type": "ipv4", "src-ip": "10.10.0.0/16", "dst-ip": "192.168.1.0/24", "nw-proto": "icmp", "tp-src": 20, "tp-dst": 30, "priority": 4, "action": "deny"}' http://localhost:8090/wm/firewall/rules/json
+curl -X POST -d '{"switchid": "00:00:00:00:00:00:00:01", "src-inport": 3, "dl-type": "ipv4", "nw-proto": "icmp", "tp-src": 20, "tp-dst": 30, "priority": 3, "action": "deny"}' http://localhost:8090/wm/firewall/rules/json

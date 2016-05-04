@@ -42,7 +42,7 @@ function postRule(req, res, type) {
                 }
                 break;
         }
-        
+
         var fRule, conflicts;
         switch (type) {
             case 'firewall':
@@ -54,23 +54,26 @@ function postRule(req, res, type) {
                 conflicts = aclAnomaliesResolver.findAnomalies(fRule);
                 break;
         }
-        console.log(fRule.toString());
-        var reply = "";
+        var reply = {status: "", 'rule-id': ""};
         var mustBeAdded = false;
+        var deletedRules = 0;
         for (var i = 0; i < conflicts.length; i++) {
             if (conflicts[i].type == 0) {
-                reply = "Conflicts detected! The rule was not added.\n";
-                reply += JSON.stringify(conflicts[i]) + "\n";
-            } else {  
+                reply['status'] = "Conflicts detected! The rule was not added.";
+                reply['rule-id'] = JSON.stringify(conflicts[i]['rule-id']) + "\n";
+            } else {
                 var id = {"ruleid": conflicts[i]['rule-id']};
                 switch (type) {
                     case 'firewall':
+                        console.log(id);
                         floodlight.removeRuleFromFloodlight(res, floodlight.firewallUrl, id);
                         mustBeAdded = true;
+                        deletedRules++;
                         break;
                     case 'acl':
                         floodlight.removeRuleFromFloodlight(res, floodlight.aclUrl, id);
                         mustBeAdded = true;
+                        deletedRules++;
                         break;
                 }
             }
@@ -78,15 +81,15 @@ function postRule(req, res, type) {
         if (conflicts.length == 0 || mustBeAdded) {
             switch (type) {
                 case 'firewall':
-                    floodlight.sendRule(res, floodlight.firewallUrl, firewallAnomaliesResolver, rule, fRule);
+                    floodlight.sendRule(res, floodlight.firewallUrl, firewallAnomaliesResolver, rule, 
+                        fRule, deletedRules);
                     return;
                 case 'acl':
-                    floodlight.sendRule(res, floodlight.aclUrl, aclAnomaliesResolver, rule, fRule);
+                    floodlight.sendRule(floodlight.aclUrl, aclAnomaliesResolver, rule, fRule, deletedRules);
                     return;
             }
         }
-        res.end(reply);
-        return;
+        res.end(JSON.stringify(reply));
     })
 }
 
@@ -149,7 +152,8 @@ function accept(req, res) {
             if (req.method == 'GET') {
                 getRules(res, 'firewall');
             }
-            return;
+            break;
+            //return;
         case '/wm/acl/rules/json':
             if (req.method == 'POST') {
                 postRule(req, res, 'acl');
@@ -160,12 +164,13 @@ function accept(req, res) {
             if (req.method == 'GET') {
                 getRules(res, 'acl');
             }
-            return;
+            break;
+            //return;
         default:
             res.statusCode = 404;
             res.end("Not found");
+            fileServer.serve(req, res);
     }
-    fileServer.serve(req, res);
 }
 
 if (!module.parent) {

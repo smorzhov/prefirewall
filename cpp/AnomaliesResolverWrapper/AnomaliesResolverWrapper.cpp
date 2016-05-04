@@ -3,10 +3,7 @@
 //
 
 #include "AnomaliesResolverWrapper.h"
-#include "../RuleWrappers/RuleWrapper.h"
 #include "../RuleWrappers/FloodlightACLRuleWrapper.h"
-#include <node/node.h>
-#include <node/v8.h>
 
 namespace PreFirewall {
 

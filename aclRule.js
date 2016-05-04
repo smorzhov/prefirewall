@@ -9,7 +9,7 @@ exports.isValid = function (rule) {
 
 function isProtocolValid(proto) {
     if (proto == null) return true;
-    if (proto.isInteger()) {
+    if (Number.isInteger(proto)) {
         return proto == 0 || proto == 6 || proto == 11 || proto == 1;
     }
     if (typeof proto === "string" || proto instanceof String) {
