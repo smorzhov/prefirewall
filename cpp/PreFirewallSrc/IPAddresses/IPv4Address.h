@@ -19,7 +19,9 @@ public:
 
     const string &getIp() const { return ip; }
 
-    uint8_t getMaskbitsDec() const { return maskbits; }
+    const string getPrefix() const;
+
+    const uint8_t getMaskbits() const { return maskbits; }
 
     uint32_t getPrefixDec() const { return prefix; }
 

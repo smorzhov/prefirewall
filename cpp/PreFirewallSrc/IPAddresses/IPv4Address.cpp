@@ -2,6 +2,7 @@
 // Created by smorzhov on 22.02.16.
 //
 
+#include <sstream>
 #include "IPv4Address.h"
 
 IPv4Address::IPv4Address() {
@@ -56,3 +57,15 @@ pair<uint32_t, uint8_t> IPv4Address::parseIPV4string(const char* ipAddress) {
             uint32_t(ipbytes[3]);
     return make_pair(prefix, mask % 32);
 }
+
+const string IPv4Address::getPrefix() const {
+    char ipAddr[16];
+    snprintf(ipAddr, sizeof ipAddr, "%u.%u.%u.%u",
+             (prefix & 0xff000000) >> 24,
+             (prefix & 0x00ff0000) >> 16,
+             (prefix & 0x0000ff00) >> 8,
+             (prefix & 0x000000ff));
+    return ipAddr;
+}
+
+

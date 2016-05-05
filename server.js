@@ -60,7 +60,7 @@ function postRule(req, res, type) {
         for (var i = 0; i < conflicts.length; i++) {
             if (conflicts[i].type == 0) {
                 reply['status'] = "Conflicts detected! The rule was not added.";
-                reply['rule-id'] = JSON.stringify(conflicts[i]['rule-id']) + "\n";
+                reply['rule-id'] = JSON.stringify(conflicts[i]) + "\n";
             } else {
                 var id = {"ruleid": conflicts[i]['rule-id']};
                 switch (type) {

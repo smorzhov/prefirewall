@@ -138,24 +138,40 @@ string FloodlightFirewallRule::actionToString() const {
         case Action::ALLOW:
             return "allow";
         case Action::DENY:
-            return "deny";
+            return "drop";
     }
 }
 
 std::string FloodlightFirewallRule::toString() const {
+    bool anyDlType = false;
+    if (dlType == DlType::ANY) anyDlType = true;
+    bool anyNwProto = false;
+    if (nwProto == NwProto::ANY) anyNwProto = true;
     return string("{")
-            .append("\"ruleid\": \"").append(to_string(id)).append("\", ")
-            .append("\"switchid\": \"").append(switchId).append("\", ")
-            .append("\"src-inport\": \"").append(to_string(srcInport)).append("\", ")
-            .append("\"src-mac\": \"").append(srcMac).append("\", ")
-            .append("\"dst-mac\": \"").append(dstMac).append("\", ")
-            .append("\"dl-type\": \"").append(to_string((int) dlType)).append("\", ")
-            .append("\"src-ip\": \"").append(srcIp.getIp()).append("\", ")
-            .append("\"dst-ip\": \"").append(dstIp.getIp()).append("\", ")
-            .append("\"nw-proto\": \"").append(to_string((int) nwProto)).append("\", ")
-            .append("\"tp-src\": \"").append(to_string(tpSrc)).append("\", ")
-            .append("\"tp-dst\": \"").append(to_string(tpDst)).append("\", ")
-            .append("\"priority\": \"").append(to_string(priority)).append("\", ")
+            .append("\"ruleid\": ").append(to_string(id)).append(", ")
+            .append("\"dpid\": \"").append(switchId).append("\", ")
+            .append("\"in_port\": ").append(to_string(srcInport)).append(", ")
+            .append("\"dl_src\": \"").append(srcMac).append("\", ")
+            .append("\"dl_dst\": \"").append(dstMac).append("\", ")
+            .append("\"dl_type\": ").append(to_string((int) dlType)).append(", ")
+            .append("\"nw_src_prefix\": \"").append(srcIp.getPrefix()).append("\", ")
+            .append("\"nw_src_maskbits\": ").append(to_string((int) srcIp.getMaskbits())).append(", ")
+            .append("\"nw_dst_prefix\": \"").append(dstIp.getPrefix()).append("\", ")
+            .append("\"nw_dst_maskbits\": ").append(to_string((int) dstIp.getMaskbits())).append(", ")
+            .append("\"nw_proto\": ").append(to_string((int) nwProto)).append(", ")
+            .append("\"tp_src\": ").append(to_string(tpSrc)).append(", ")
+            .append("\"tp_dst\": ").append(to_string(tpDst)).append(", ")
+            .append("\"any_dpid\": ").append(anySwitchId ? "true": "false").append(", ")
+            .append("\"any_in_port\": ").append(anySrcInport ? "true": "false").append(", ")
+            .append("\"any_dl_src\": ").append(anySrcMac ? "true": "false").append(", ")
+            .append("\"any_dl_dst\": ").append(anyDstMac ? "true": "false").append(", ")
+            .append("\"any_dl_type\": ").append(anyDlType ? "true": "false").append(", ")
+            .append("\"any_nw_src\": ").append(anySrcIp ? "true": "false").append(", ")
+            .append("\"any_nw_dst\": ").append(anyDstIp ? "true": "false").append(", ")
+            .append("\"any_nw_proto\": ").append(anyNwProto ? "true": "false").append(", ")
+            .append("\"any_tp_src\": ").append(anyTpSrc ? "true": "false").append(", ")
+            .append("\"any_tp_dst\": ").append(anyTpDst ? "true": "false").append(", ")
+            .append("\"priority\": ").append(to_string(priority)).append(", ")
             .append("\"action\": \"").append(actionToString()).append("\"")
             .append("}");
 }

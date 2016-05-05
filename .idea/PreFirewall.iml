@@ -25,17 +25,17 @@
       <sourceFolder url="file://$MODULE_DIR$/cpp/PreFirewallSrc/IPAddresses/IPAddress.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/cpp/PreFirewallNode.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/src/gtest_main.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/src/gtest-all.cc" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/cmake/internal_utils.cmake" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/BasicTests/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckFirewall.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/BasicTests/IPv4AdressCheck.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/BasicTests/FirewallRuleCheck.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/BasicTests/AlgorithmCheckACL.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/BasicTests/ACLRuleCheck.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/src/gtest_main.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/src/gtest-all.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/lib/googletest/cmake/internal_utils.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PreFirewallTests/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
