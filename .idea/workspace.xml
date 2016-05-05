@@ -52,16 +52,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6aa622f-ee61-498b-b9a9-6da1cdd03199" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Release/obj.target/PreFirewall/cpp/PreFirewallSrc/IPAddresses/IPv4Address.o" afterPath="$PROJECT_DIR$/build/Release/obj.target/PreFirewall/cpp/PreFirewallSrc/IPAddresses/IPv4Address.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Release/obj.target/PreFirewall/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.o" afterPath="$PROJECT_DIR$/build/Release/obj.target/PreFirewall/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PreFirewall.iml" afterPath="$PROJECT_DIR$/.idea/PreFirewall.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Release/PreFirewall.node" afterPath="$PROJECT_DIR$/build/Release/PreFirewall.node" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Release/obj.target/PreFirewall.node" afterPath="$PROJECT_DIR$/build/Release/obj.target/PreFirewall.node" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.cpp" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.h" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="PreFirewall.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -127,8 +119,8 @@
       <file leaf-file-name="FloodlightFirewallRule.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="172" column="65" selection-start-line="172" selection-start-column="65" selection-end-line="172" selection-end-column="65" />
+            <state relative-caret-position="213">
+              <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -932,7 +924,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462444140845</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Changes:&#10;- Change floodlightFirwallRule.toString(). Now it returns strings similar to floodlight">
+      <created>1462455746399</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1462455746399</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1016,6 +1015,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="first commit" />
     <MESSAGE value="crlf to lf" />
     <MESSAGE value="js wrap added" />
@@ -1031,7 +1031,8 @@
     <MESSAGE value="Changes:&#10;- minor changes (js). Niw it can understand strings and int codes (dlType, nwProto)" />
     <MESSAGE value="Changes:&#10;- minor changes (js);&#10;- added rulesNumber.py (it counts firewall rules in floodlight);&#10;- added rule_generator" />
     <MESSAGE value="Changes:&#10;- getRules() now returns JSON object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- getRules() now returns JSON object" />
+    <MESSAGE value="Changes:&#10;- Change floodlightFirwallRule.toString(). Now it returns strings similar to floodlight" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Change floodlightFirwallRule.toString(). Now it returns strings similar to floodlight" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1468,8 +1469,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="172" column="65" selection-start-line="172" selection-start-column="65" selection-end-line="172" selection-end-column="65" />
+        <state relative-caret-position="213">
+          <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
           <folding />
         </state>
       </provider>

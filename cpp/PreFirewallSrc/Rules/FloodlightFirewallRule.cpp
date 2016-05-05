@@ -136,9 +136,9 @@ bool FloodlightFirewallRule::isAnyTp(short tp) {
 string FloodlightFirewallRule::actionToString() const {
     switch (this->action) {
         case Action::ALLOW:
-            return "allow";
+            return "ALLOw";
         case Action::DENY:
-            return "drop";
+            return "DROP";
     }
 }
 
