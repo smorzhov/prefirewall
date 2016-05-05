@@ -132,11 +132,12 @@ function getRules(res, type) {
         res.end("No rules\n");
         return;
     }
-    var reply = "";
+    res.end(JSON.stringify(rules));
+    /*var reply = "";
     for (var i = 0; i < rules.length; i++) {
         reply += rules[i].toString() + '\n';
     }
-    res.end(reply);
+    res.end(reply);*/
 }
 
 function accept(req, res) {

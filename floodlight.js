@@ -1,7 +1,8 @@
 var request = require('request');
 
 //192.168.17.203
-exports.firewallUrl = 'http://localhost:8080/wm/firewall/rules/json';
+exports.firewallUrl = 'http://192.168.17.203:8080/wm/firewall/rules/json';
+//exports.firewallUrl = 'http://localhost:8080/wm/firewall/rules/json';
 exports.aclUrl = 'http://localhost:8080/wm/acl/rules/json';
 
 exports.sendRule = function (res, url, anomaliesResolver, rule, fRule, deletedRules) {
