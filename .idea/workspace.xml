@@ -52,8 +52,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6aa622f-ee61-498b-b9a9-6da1cdd03199" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vscode/.browse.VC.db" afterPath="$PROJECT_DIR$/.vscode/.browse.VC.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vscode/.browse.VC.db-shm" afterPath="$PROJECT_DIR$/.vscode/.browse.VC.db-shm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vscode/.browse.VC.db-wal" afterPath="$PROJECT_DIR$/.vscode/.browse.VC.db-wal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rule_generator" afterPath="$PROJECT_DIR$/rule_generator" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp" afterPath="$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/floodlight.js" afterPath="$PROJECT_DIR$/floodlight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rule_generator/main.py" afterPath="$PROJECT_DIR$/rule_generator/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rulesNumber.py" afterPath="$PROJECT_DIR$/rulesNumber.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="PreFirewall.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,7 +84,7 @@
       <file leaf-file-name="AnomaliesResolver.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="540">
               <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding>
                 <element signature="e#43#63#0" expanded="true" />
@@ -89,7 +96,7 @@
       <file leaf-file-name="FloodlightACLRule.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-447">
+            <state relative-caret-position="420">
               <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
               <folding />
             </state>
@@ -99,7 +106,7 @@
       <file leaf-file-name="FloodlightACLRule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
+            <state relative-caret-position="765">
               <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
               <folding />
             </state>
@@ -109,7 +116,7 @@
       <file leaf-file-name="FloodlightFirewallRule.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
+            <state relative-caret-position="585">
               <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding />
             </state>
@@ -129,7 +136,7 @@
       <file leaf-file-name="FloodlightFirewallRuleWrapper.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="2310">
               <caret line="154" column="70" selection-start-line="154" selection-start-column="70" selection-end-line="154" selection-end-column="70" />
               <folding />
             </state>
@@ -139,7 +146,7 @@
       <file leaf-file-name="IPv4Address.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="240">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -159,7 +166,7 @@
       <file leaf-file-name="IPv4Address.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
+            <state relative-caret-position="1020">
               <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
               <folding>
                 <element signature="e#43#61#0" expanded="true" />
@@ -262,9 +269,9 @@
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="x" value="59" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1307" />
-    <option name="height" value="744" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -931,7 +938,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462455746399</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Changes:&#10;- allow -&gt; ALLOW and drop -&gt; DROP in rule.toString()">
+      <created>1462456991969</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1462456991969</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -979,28 +993,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="24" width="1307" height="744" extended-state="6" />
+    <frame x="59" y="-4" width="1307" height="772" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3180016" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.317757" sideWeight="0.49100256" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.4876494" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.47196263" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49402392" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.50311524" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="184" y="224" width="1101" height="544" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49688473" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49402392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49374023" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25418326" sideWeight="0.50899744" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39814815" sideWeight="0.4876494" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.47196263" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="184" y="224" width="1101" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49402392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39814815" sideWeight="0.4876494" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1032,7 +1046,8 @@
     <MESSAGE value="Changes:&#10;- minor changes (js);&#10;- added rulesNumber.py (it counts firewall rules in floodlight);&#10;- added rule_generator" />
     <MESSAGE value="Changes:&#10;- getRules() now returns JSON object" />
     <MESSAGE value="Changes:&#10;- Change floodlightFirwallRule.toString(). Now it returns strings similar to floodlight" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Change floodlightFirwallRule.toString(). Now it returns strings similar to floodlight" />
+    <MESSAGE value="Changes:&#10;- allow -&gt; ALLOW and drop -&gt; DROP in rule.toString()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- allow -&gt; ALLOW and drop -&gt; DROP in rule.toString()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1240,7 +1255,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,7 +1262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1256,7 +1269,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1264,7 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,7 +1297,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="80" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1294,7 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1302,7 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1310,7 +1318,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1755">
           <caret line="117" column="63" selection-start-line="117" selection-start-column="63" selection-end-line="117" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1318,26 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <marker date="1462442319113" expanded="true" signature="345:1295" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="359:447" placeholder="{&quot;method&quot;: 'POST'...}" />
-            <marker date="1462442319113" expanded="true" signature="482:1292" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="534:1240" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="591:763" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="769:1026" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="925:1012" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="1285:1292" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="1362:1904" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="1376:1464" placeholder="{&quot;method&quot;: 'DELETE'...}" />
-            <marker date="1462442319113" expanded="true" signature="1499:1901" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="1551:1848" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="1609:1759" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="1965:2364" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="2002:2090" placeholder="{&quot;method&quot;: 'DELETE'...}" />
-            <marker date="1462442319113" expanded="true" signature="2125:2361" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="2201:2293" placeholder="{...}" />
-            <marker date="1462442319113" expanded="true" signature="2456:2507" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1345,7 +1332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,30 +1340,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1515">
           <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
-          <folding>
-            <marker date="1462449856698" expanded="true" signature="542:3332" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="680:3329" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="931:1334" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="1928:2804" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="2144:2794" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="2238:2780" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="2855:3283" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="2883:3273" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="3370:4031" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="3508:4028" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="3722:4022" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="4062:4558" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="4586:5550" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="4666:5548" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="4746:4809" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="4850:4915" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="4953:5011" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="5126:5184" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="5225:5285" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="5323:5376" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="5572:5668" placeholder="{...}" />
-            <marker date="1462449856698" expanded="true" signature="5674:5706" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1393,7 +1355,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Algorithm/AnomaliesResolver.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="540">
           <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding>
             <element signature="e#43#63#0" expanded="true" />
@@ -1419,7 +1381,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightFirewallRule.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
+        <state relative-caret-position="585">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding />
         </state>
@@ -1427,7 +1389,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
+        <state relative-caret-position="765">
           <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
           <folding />
         </state>
@@ -1435,7 +1397,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/Rules/FloodlightACLRule.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-447">
+        <state relative-caret-position="420">
           <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding />
         </state>
@@ -1443,7 +1405,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/RuleWrappers/FloodlightFirewallRuleWrapper.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="2310">
           <caret line="154" column="70" selection-start-line="154" selection-start-column="70" selection-end-line="154" selection-end-column="70" />
           <folding />
         </state>
@@ -1451,7 +1413,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="240">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
@@ -1459,7 +1421,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cpp/PreFirewallSrc/IPAddresses/IPv4Address.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
+        <state relative-caret-position="1020">
           <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
           <folding>
             <element signature="e#43#61#0" expanded="true" />
