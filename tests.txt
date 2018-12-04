@@ -1,3 +1,0 @@
-curl -X POST -d '{"src-ip": "192.168.0.1/32", "dl-type": ipv4, "action": "allow"}' http://localhost:8090/wm/firewall/rules/json
-curl -X DELETE -d '{"ruleid": 1005322914}' http://localhost:8090/wm/firewall/rules/json
-curl http://localhost:8090/wm/firewall/rules/json
